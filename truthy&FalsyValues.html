@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // There are 5 falsy values 
+        // zero
+        // empty string 
+        // undefined 
+        // NaN
+        // Null
+        console.log(Boolean(NaN))
+        console.log(Boolean(null))
+        console.log(Boolean(undefined))
+        console.log(Boolean(0))
+        console.log(Boolean(''))
+        console.log(Boolean({}))
+
+        // Truthy and falsy values are generally used in control flow structures 
+        // example 
+        let savings = 10 ;
+        if (savings) {
+            console.log(`You got a descent amount`)
+        } else {
+            console.log(`You are broke my boy !`)
+        }
+    </script>
+</body>
+</html>
