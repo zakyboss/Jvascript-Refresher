@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       function startsWithCapital(str) {
+    if (str.length === 0) return false; // If the string is empty
+    return str[0] === str[0].toUpperCase();
+}
+
+let name = prompt(`What is your Name`);
+if (isNaN(name)) {
+    if (!startsWithCapital(name)) {  // Check if name doesn't start with a capital letter
+        console.log(`Your Name should start with a capital letter`);
+    } else {
+        console.log(`Your name is ${name}`);
+    }
+} else {
+    console.log(`Please input a valid name`);
+}
+
+let favoriteNumber = prompt("What is Your favorite number");
+console.log(`Your favorite number is ${favoriteNumber}`);
+
+if (isNaN(favoriteNumber)) {  // Check if favoriteNumber is not a valid number
+    console.log(`That is not a number`);
+} else if (favoriteNumber == 7) {
+    console.log(`You are the goat`);
+} else {
+    console.log(`Refresh and try again`);
+}
+
+
+    </script>
+</body>
+</html>
