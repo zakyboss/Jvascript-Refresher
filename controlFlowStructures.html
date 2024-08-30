@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // There are two types of control flow structures 
+        // ********If Else *******  or ****if else if *****
+        // To demonstrate this lets write the logic for a code that will take in age of a user and check if they are eligible to get a drivers license . Age to get a license is 18 yrs . If age is < 18 then we will tell the user how long he / she has to wait to get a license 
+        // const name = 'Angel'
+        // const age = 11
+        // if (age >18 ){
+        //     console.log(`Congratulations ${name} you are eligible for a driving license `)
+        // } else if (age <0 )
+        // {
+        //     console.log(`Please enter a valid age `)
+        // }
+        
+        // else {
+        //     console.log(`Sorry ${name} you are not eligible for a driving license you have to wait for ${18-age} years !`)
+        // }
+
+
+ // ********Swutch case ******
+const age = 16
+const name = 'Terminator'
+   switch (true)
+{
+ case  (age<18): 
+ console.log(`Sorry ${name} you are not eligible for a license you have to wait for ${18-age} years to get your driving license `)
+ break  ;
+ case (age>=18):
+    console.log(`Congratulations ${name} you are eligible for a driving license`)
+break ;
+default : 
+  console.log('Lets confirm ! ')
+break ;
+
+
+}
+
+
+
+const student = 'Sarah'
+let studentAge = 8 ;
+const isOldEnough = studentAge>= 18;
+if(isOldEnough ){
+    console.log(`Sarah get ready to drive baby 😋`)
+
+}
+else {
+    console.log(
+      `Better lack next time 😂 `
+    )
+}
+
+const birthYear = 2012;
+let century
+if (birthYear<= 2000) {
+     century = 20 ;
+} else {
+    century=21 ;
+}
+console.log(century)
+
+
+    </script>
+</body>
+</html>
