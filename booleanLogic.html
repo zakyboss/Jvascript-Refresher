@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    <script>
+        // They are 3 
+        // AND 
+        // OR 
+        // NOT  -->
+
+
+        // <!-- ******AND *****
+
+            // Only if the two variables are true 
+            // return true only if A&& B&& C are True 
+            //  Logic to check if sarah has a driving license or good vision 
+
+            let name = 'Sarah'
+            let drivingLicense =prompt("Do you have a driving license , Enter Yes or No")
+            let sarahsVision='Good'
+            if (drivingLicense=='Yes'&& sarahsVision=='Good') {
+                console.log(`${name} you are good to go`)
+            } else if (drivingLicense=='Yes'|| sarahsVision=='Good') {
+                 if(drivingLicense=='Yes'&sarahsVision !== 'Good'){
+                    console.log(`You have a driving license but you cant drive coz you got awful vision ${name}`)
+                 } else if(drivingLicense!=='Yes'&& sarahsVision=='Good'){
+                    console.log(`You got good Vision ${name} but no license so you cant drive baby !`)
+                 } 
+            } else {
+                console.log(`Choose a struggle ${name} !`)
+            }
+   
+   </script>
+</body>
+</html>
