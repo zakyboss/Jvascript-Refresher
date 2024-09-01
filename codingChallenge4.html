@@ -21,9 +21,15 @@
 
         // TEST DATA: Test with different bill values: 275, 40, and 430
 
-        let tip;
-        let bill = 340;
-        console.log(`${bill >= 50 && bill <= 300 ? `Your bill is ${bill} and your tip is ${(tip = bill * (15 / 100))} and your total is ${(tip + bill)}` : `Your bill is ${bill} and your tip is ${(tip = bill * (20 / 100))} and your total is ${(tip + bill)}`}`);
+    function stevenTipCalculator (tip,bill){
+        bill = prompt(`Please Enter Your Bill `);
+        bill= Number(bill)
+    bill>=50 && bill<=300? `${tip=bill*15/100}` : `${tip=bill*20/100}`
+    let totalBill= (bill+tip)
+    return console.log(`Your bill is ${bill} and your tip is ${tip} and your total bill is ${totalBill}`)
+    }
+    let amountOwed = stevenTipCalculator();
+     console.log(amountOwed)
     </script>
 </body>
 </html>
