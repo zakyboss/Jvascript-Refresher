@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <Script>
+
+        // 1. Simple Arithmetic Function
+// Task: Write a function called calculateArea that takes the radius of a circle as an argument and returns the area of the circle. Use the formula 
+// Area
+// =
+// 𝜋
+// ×
+// radius
+// 2
+// Area=π×radius 
+// 2
+//  .
+// 2. Array Manipulation Function
+// Task: Create a function called removeDuplicates that accepts an array of numbers and returns a new array with all duplicates removed.
+// 3. String Transformation Function
+// Task: Write a function called capitalizeWords that takes a string as an input and returns the string with the first letter of each word capitalized.
+// 4. Recursive Function
+// Task: Create a recursive function called factorial that calculates the factorial of a given number. The factorial of a number 
+// 𝑛
+// n is the product of all positive integers less than or equal to 
+// 𝑛
+// n.
+// 5. Complex Data Processing Function
+// Task: Write a function called findMostFrequent that takes an array of strings and returns the string that appears most frequently. If there is a tie, return all the strings that appear most frequently as an array.
+//     
+
+
+        // *********Solution ***********
+            // TASK 1 
+        function calculateArea(radius){
+let pie = Math.PI
+const Area = pie *(radius**2)
+return Area
+        }
+    const result = calculateArea(12)
+    console.log(result)
+
+
+
+    // Task 2 
+    // Prompt the user to enter values and split them into an array
+let input = prompt('Please Enter Values for Array (comma-separated):'); 
+let arr = input.split(',').map(item => item.trim()); // Split the input string by commas and trim any spaces
+
+function removeDuplicates(arr) {
+    let uniqueArray = []; // Initialize an empty array to store unique values
+
+    arr.forEach(key => {
+        if (!uniqueArray.includes(key)) { // Check if key is not already in uniqueArray
+            uniqueArray.push(key); // Add the unique key to uniqueArray
+        }
+    });
+
+    return uniqueArray; // Return the array with duplicates removed
+}
+
+console.log(removeDuplicates(arr)); // Call the function and log the result
+
+
+</Script>
+</body>
+</html>

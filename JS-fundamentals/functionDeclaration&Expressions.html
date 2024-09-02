@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            // ****************Function Declaration ****************
+            // example  below a function that takes in Date of Birth of a person then calculates there age today 
+
+            let DOB = prompt('Please enter a valid Date of Birth (year)');
+DOB = Number(DOB);
+            // This is a Declaration Function 
+function calculateAge() {
+    let currentYear = new Date().getFullYear(); // Dynamically get the current year
+
+    // Validate the input
+    if (!isNaN(DOB) && DOB > 0 && DOB <= currentYear) {
+        return `Your age is ${currentYear - DOB}`;
+    } else {
+        return 'Please enter a valid Date of Birth';
+    }
+}
+
+let yourAge = calculateAge();
+console.log(yourAge);
+
+
+            //    ****************Function Expression*****************
+                const calculateAge2 = function (birthYear){
+                          let yearNow = 2037 ;
+                          let age = yearNow-birthYear ;
+                          return `Your age as per Now is ${age}`
+               }
+               const age2 = calculateAge2(1994)
+               console.log(age2)
+
+
+               const sayHello = function (){  console.log(`Hello everybody `)}
+               console.log(sayHello())
+    </script>
+</body>
+</html>
