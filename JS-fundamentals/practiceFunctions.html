@@ -65,6 +65,40 @@ function removeDuplicates(arr) {
 
 console.log(removeDuplicates(arr)); // Call the function and log the result
 
+ 
+
+                    //  ********************TASKS **********************
+                    // Full Name Formatter:
+// Create a function formatFullName(firstName, lastName) that takes a first name and a last name,
+//  capitalizes the first letter of each, and returns the full name in the format: "Zakariya Mohamed".
+const formatFullName = function (firstName, lastName) {
+    // Ensure firstName and lastName are provided and are not numbers
+    if (firstName && lastName && isNaN(firstName) && isNaN(lastName)) {
+        // Capitalize the first letter of each name and concatenate the rest
+        let firstLetter1 = firstName[0].toUpperCase();
+        let firstLetter2 = lastName[0].toUpperCase();
+
+        // Construct the finished names
+        let finishedNameFirstName = `${firstLetter1}${firstName.substring(1).toLowerCase()}`;
+        let finishedNameLastName = `${firstLetter2}${lastName.substring(1).toLowerCase()}`;
+
+        // Return the full name
+        return finishedNameFirstName + ' ' + finishedNameLastName;
+    } else {
+        return "Invalid input. Please provide valid first and last names.";
+    }
+};
+
+// Example usage
+console.log(formatFullName("zakariya", "mohamed")); // Output: "Zakariya Mohamed"
+
+
+
+
+
+
+
+
 
 </Script>
 </body>

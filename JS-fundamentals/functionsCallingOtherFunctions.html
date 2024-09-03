@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+//         let nameTaker = function(){
+//             let name = window.prompt("Please Enter Your name ")
+//              if (name!=''){
+//      console.log(` ${name}`)
+//              }
+
+//         }
+//         console.log(nameTaker()) ;
+//              let happyBirthday = function (){
+//  let nameToWish = nameTaker()
+//         return `Happy Birthday ${nameToWish}`
+//              }
+//              console.log(happyBirthday())
+    
+//      function cutFruitPieces(){
+//          return fruit *4 ;
+//      }
+//      function fruitProcessor (apple, oranges){
+//         const juice = `Juice with ${apples} apples and ${oranges} oranges.` ;
+//         return juice ; 
+//      }
+        //   There are 3 Types of functions 
+        // declaration function 
+        // // example 
+        //  const name = 'Zakyboss'
+        //  function wishHappyBirthday(name){ 
+        //     for(let i=0 ; i<10 ; i++){
+        //         console.log(`Happy birthday to ${name}`)
+        //     }
+
+        // }
+        // let result = wishHappyBirthday(name)
+        // console.log(result())
+
+
+
+    //             // Expression Function
+    //             let salary = window.prompt('Please Insert your Salary ')
+    //             salary= Number(salary)
+    //      let calculateTax=function(salary){
+    //            let tax ;
+    //         if (salary >= 10000){
+    //              tax= (10/100);
+    //              console.log(`Your salary is ${salary*tax}`)
+    //           } else if (salary>=50000){
+    //             tax = (15/100)
+    //             console.log(`Your salary is ${salary*tax}`)
+
+    //           }  else if (salary>=75000){
+    //             tax = (20/100)
+    //             console.log(`Your salary is ${salary*tax}`)
+
+    //           } else if (salary>=100000){
+    //                    tax = (25/100)
+    //                    console.log(`Your salary is ${salary*tax}`)
+
+    //           } else {
+    //             console.log(`Please enter a valid number `)
+    //           }
+            
+    //      }
+    //  console.log(calculateTax(salary))
+
+
+
+    //                 //  arraow function 
+    //                 let calculateSpeed = (distance,time)=>`speed = ${distance/time}km/s`
+    //                 console.log(calculateSpeed(100,30))
+
+
+
+
+            //         // recusrion 
+            //          let fruitProcessor = function  (apple , oranges ){
+            //             let juice = console.log(`Your Juice is made up of ${apple}apples and ${oranges}oranges`)
+            //             return juice
+            //          }
+            // //   a function that sells the juice produced 
+            //              let amountToPayCalc= function (price){
+            //             price= fruitProcessor(3,5)
+            //             return amount
+            //              }
+            //              console.log(amountToPayCalc())
+
+
+
+
+                                        // TESTING MY RECURSION SKILLS 
+                                        // Basic Function Call:
+
+// Write two functions, greet and sayHello. The greet function should call sayHello and pass it a name. For example, sayHello should print "Hello, [name]!" when called. How would you structure these functions?
+// Function Return Value:
+
+// Create a function add that takes two numbers as parameters and returns their sum. Then, write another function double that takes one number, doubles it, and returns the result. Use the add function inside the double function to first add two numbers and then double the result. How would you do that?
+// Function with Default Parameters:
+
+// Write a function multiply that takes two numbers and multiplies them. Create another function square that calls multiply to square a number. What happens if you only pass one argument to square?
+// Conditional Function Call:
+
+// Write a function isEven that checks if a number is even. Create another function checkNumber that calls isEven and prints "Even" or "Odd" based on the result. How would you ensure that checkNumber correctly identifies the number type?
+// Function with Loops:
+
+// Write a function printMessage that prints a given message a specified number of times. Then, create another function repeatGreeting that calls printMessage to print "Hello!" five times. How would you implement these functions?
+// These questions should help you practice calling functions from within other functions and understand how to manage arguments and return values in JavaScript.
+
+
+    //    TASK 1 
+   
+    function sayHello(name){
+        console.log(`Hello ${name}`)
+    }                       
+
+    function greet() {
+ sayHello(`Juma`)
+    }
+    greet()
+
+            //   task 2 
+// Create a function add that takes two numbers as parameters and returns their sum. Then,
+//  write another function double that takes one number, doubles it, and returns the result. Use the add function inside the double function to first add two numbers and then double the result. How would you do that?
+// Function with Default Parameters:
+
+let calculateSum= function(num1,num2){
+   return (num1+num2)
+}
+let double= function(value1){
+      value1 =  calculateSum(25,30) ;
+       const result = (value1*2)
+        return result
+}
+console.log(double())
+
+//  task3
+// Write a function multiply that takes two numbers and multiplies them. Create another function square that calls multiply to square a number. What happens if you only pass one argument to square?
+// Conditional Function Call:
+let multiply = function (a,b){
+ return (a*b)
+}
+let square = function(x) {
+    // If no argument is passed, x will be undefined, and we should handle that
+    if (x === undefined) {
+        console.log("No argument passed to square(). Returning NaN.");
+        return NaN; // Return NaN to indicate the result is not a number
+    }
+    // Use multiply to square the number
+    let resultOfMultiply = multiply(x, x);
+    return resultOfMultiply;
+}
+
+
+console.log(square(6))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
