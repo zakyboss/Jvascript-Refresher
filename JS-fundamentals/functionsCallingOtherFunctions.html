@@ -115,51 +115,63 @@
 
     //    TASK 1 
    
-    function sayHello(name){
-        console.log(`Hello ${name}`)
-    }                       
+//     function sayHello(name){
+//         console.log(`Hello ${name}`)
+//     }                       
 
-    function greet() {
- sayHello(`Juma`)
-    }
-    greet()
+//     function greet() {
+//  sayHello(`Juma`)
+//     }
+//     greet()
 
-            //   task 2 
-// Create a function add that takes two numbers as parameters and returns their sum. Then,
-//  write another function double that takes one number, doubles it, and returns the result. Use the add function inside the double function to first add two numbers and then double the result. How would you do that?
-// Function with Default Parameters:
+//             //   task 2 
+// // Create a function add that takes two numbers as parameters and returns their sum. Then,
+// //  write another function double that takes one number, doubles it, and returns the result. Use the add function inside the double function to first add two numbers and then double the result. How would you do that?
+// // Function with Default Parameters:
 
-let calculateSum= function(num1,num2){
-   return (num1+num2)
+// let calculateSum= function(num1,num2){
+//    return (num1+num2)
+// }
+// let double= function(value1){
+//       value1 =  calculateSum(25,30) ;
+//        const result = (value1*2)
+//         return result
+// }
+// console.log(double())
+
+// //  task3
+// // Write a function multiply that takes two numbers and multiplies them. Create another function square that calls multiply to square a number. What happens if you only pass one argument to square?
+// // Conditional Function Call:
+// let multiply = function (a,b){
+//  return (a*b)
+// }
+// let square = function(x) {
+//     // If no argument is passed, x will be undefined, and we should handle that
+//     if (x === undefined) {
+//         console.log("No argument passed to square(). Returning NaN.");
+//         return NaN; // Return NaN to indicate the result is not a number
+//     }
+//     // Use multiply to square the number
+//     let resultOfMultiply = multiply(x, x);
+//     return resultOfMultiply;
+// }
+
+
+// console.log(square(6))
+
+
+
+let driving=function (age) {
+ return age ; 
+
 }
-let double= function(value1){
-      value1 =  calculateSum(25,30) ;
-       const result = (value1*2)
-        return result
-}
-console.log(double())
-
-//  task3
-// Write a function multiply that takes two numbers and multiplies them. Create another function square that calls multiply to square a number. What happens if you only pass one argument to square?
-// Conditional Function Call:
-let multiply = function (a,b){
- return (a*b)
-}
-let square = function(x) {
-    // If no argument is passed, x will be undefined, and we should handle that
-    if (x === undefined) {
-        console.log("No argument passed to square(). Returning NaN.");
-        return NaN; // Return NaN to indicate the result is not a number
-    }
-    // Use multiply to square the number
-    let resultOfMultiply = multiply(x, x);
-    return resultOfMultiply;
+let license = function (){
+    let verify = driving(22)
+   return  verify >18 ? "You can Drive " : "You are too young" ;
 }
 
-
-console.log(square(6))
-
-
+let result = license();
+console.log(result)
 
 
 
