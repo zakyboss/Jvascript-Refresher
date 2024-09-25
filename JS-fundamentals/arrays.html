@@ -20,6 +20,28 @@ let friends=['Michael','James','Kevin','Leah'];
 const years=new Array(1991,1990,1998,2000);
 console.log(friends[friends.length-1])
 
+// An array can contain values of different value 
+let firstName = 'Zak'
+const Zak = [firstName, 22,friends]
+console.log(Zak)
+
+// Array excercise 
+const calcAge= function(birthYear){
+    return 2024-birthYear
+}
+let bornYears = new Array(1990,2022,2013,2001,2014)
+console.log(bornYears)
+const age1= calcAge(bornYears[0])
+const age2= calcAge(bornYears[1])
+const age3= calcAge(bornYears[bornYears.length-1])
+
+console.log(age1,age2,age3)
+// You can put function calls in an array 
+// eg
+const ages = [calcAge(bornYears[0]),calcAge(bornYears[1]),calcAge(bornYears[2])] 
+
+console.log(ages)
+
 </script>
 </body>
 </html>
