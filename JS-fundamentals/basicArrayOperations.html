@@ -12,6 +12,35 @@
 // ***Push method adds elements to end of array 
 friends.push("Jonas")
 console.log(friends)
-    </script>
+// Push method returns length  --- adds to end ---
+// Add friends at the front 
+friends.unshift("Zak")
+
+// Remove elements 
+// **********Pop*********
+// removes element from last?
+friends.pop();
+console.log(friends)
+ // Pop returns the removed element not length 
+ let popped = friends.pop()
+ console.log(popped)
+
+
+ /// ***************Shift*********
+//  removes from first
+friends.shift()
+console.log(friends)
+
+// To find index of an element in an array 
+// ************indexOF**********
+console.log(friends.indexOf("Michael"))
+   
+///    we can also use *****includes **** 
+// To check if an array contains a certain value 
+// if it is present returns true else false
+console.log(friends.includes("Michael"))
+console.log(friends.includes("Bomboclat"))
+   
+   </script>
 </body>
 </html>
