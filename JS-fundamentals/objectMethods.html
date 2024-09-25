@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict"
+        const Zak = {
+            // age: 21,
+            firstName:'Zak',
+            birthYear:2003,
+            school: "Strathmore University",
+            degree: "Computer Science",
+            friends: false ,
+            //  ['Sarah', 'Wilson', 'Diego'], 
+            hasDriversLicense:true,
+           calcAge : function(){
+//    return 2037 - this.birthYear ;
+this.age=2037-this.birthYear;
+return this.age;
+           },
+           hasDriversLicense:function(){
+            return this.hasDriversLicense? 'has drivers license' : 'has no drivers license';
+
+           } , 
+           addFriends :function(){
+            this.addedFriend=this.friends='false' ? `${this.friends=['Sarah', 'Wilson', 'Diego']}`:` you already have enough friends}`
+  return this.addedFriend ;
+           }
+        };
+    Zak.calcAge()
+        console.log(Zak.age)
+        // console.log(`Zak is ${Zak['calcAge'](t)} years old`)
+    
+        // Small challenge 
+        // get summary function 
+        // "Zak is a 46 year old teacher , and he has a driverslicence"
+        Zak.hasDriversLicense()
+    // console.log(`${Zak.firstName} is ${Zak.age} years old and ${Zak.hasDriversLicense==true ?`has drivers license`:`has no drivers license`}`)
+    console.log(`${Zak.firstName} is ${Zak.age} years old and ${Zak.hasDriversLicense()}`)
+// console.log(Zak.friends.push('JJ'))
+Zak.addFriends()
+let addedfriends2=Zak.addedFriend.split(',')
+addedfriends2.forEach(element => {
+  console.log(element.trim())
+});
+// console.log(addedfriends2)
+// console.log(Zak.addedFriend.split(','))
+// console.log(Zak.addedFriend)
+   </script>
+</body>
+</html>

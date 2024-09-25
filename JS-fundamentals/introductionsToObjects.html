@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict";
+        // objects are another data structure that store values as key-value pairs
+        // example
+        const Zak = {
+            age: 21,
+            school: "Strathmore University",
+            degree: "Computer Science",
+            friends: ['Sarah', 'Wilson', 'Diego']
+        };
+
+        // to get all the values of object
+        console.log(Zak);
+        // to get a single value
+        console.log(Zak.school);
+
+        // There are many ways of creating objects
+        // const Zak = {age:21, school:"Strathmore University", degree:"computer Science",friends:['Sarah','Wilson','Diego']}; // is an object literal
+
+        // ****An object is different from an array because the order number does not matter
+        // Retrieving data from an object
+        // *******************There are 2 methods***********
+        //    The dot (.) and the bracket notation
+        //   ***************Dot notation**********
+        console.log(Zak.degree);
+
+        //  *****************Bracket notation*****************
+        console.log(Zak['degree']); // example
+
+        // Adding new property to objects
+        Zak.location = 'Nairobi';
+        Zak.email = 'Boochimo9@hmail.com';
+
+        let request = prompt("Please enter what you want to know about Zak (age, degree, school, location, email):");
+
+        // Check if the property exists in the Zak object
+        if (Zak.hasOwnProperty(request)) {
+            console.log(Zak[request]);
+        } else {
+            console.log('Zak doesn\'t have the requested information');
+        }
+
+// simple challenge 
+//'Zak has 3 friends and his best friend is michael '
+console.log(`Zak has 3 friends and his best friend is ${Zak.friends[0]}`)
+
+    </script>
+</body>
+</html>
