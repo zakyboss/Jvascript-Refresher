@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      // Looping backwards over an array
+      let arr = [1, 2, 3, 4, 5];
+      let loopBackwards = function () {
+        for (let i = arr.length - 1; i >= 0; i--) {
+          console.log(arr[i]);
+        }
+      };
+      console.log(loopBackwards());
+      const Zak = ["Zak", 22, "Computer Science", "Strathmore university"];
+      let backwards = function () {
+        let storeBackwardsDetails = [];
+        for (let i = Zak.length - 1; i >= 0; i--) {
+          storeBackwardsDetails.push(Zak[i]);
+        }
+        return storeBackwardsDetails;
+      };
+      let output = backwards();
+      console.log(output);
+      for (let i = 1; i <= 3; i++) {
+        console.log(`Starting The excercise`);
+        // let j = 0 ;
+        for (let j = 1; j <= 5; j++) {
+          console.log(`${j} rep Of Bicep`);
+        }
+      }
+
+    //   challenge
+//     Write a JavaScript function that reverse a numbers.
+// Sample Data and output:
+// Example x = 32243;
+// Expected Output : 34223
+let numbers = 1234 ;
+ let reverse = function (){
+    numbers = String(numbers)
+    console.log(numbers)
+    let storeReversed = [];
+    
+    for (let i = numbers.length-1 ; i>=0 ; i--){
+        storeReversed.push(numbers[i])
+        }
+        storeReversed=String(storeReversed)
+
+       return storeReversed ;
+}
+let final = reverse();
+console.log(final)
+
+
+</script>
+  </body>
+</html>
