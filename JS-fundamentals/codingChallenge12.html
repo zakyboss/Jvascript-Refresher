@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   "use strict";
+      //   // 31. Create a function that will return the number of words in a text
+      //   let text = "Hey its nice seeing you again !";
+      //   text.split(",");
+      //   console.log(text);
+      //   let storeWords = [];
+
+      //   let findNumberOfWords = function () {
+      //     for (let i = 0; i < text.length; i++) {
+      //       storeWords.push(text[i]);
+      //     }
+
+      //     return storeWords;
+      //   };
+      //   let result = findNumberOfWords();
+      //   console.log(result);
+      //   "use strict";
+
+      // 31. Create a function that will return the number of words in a text
+      let text = "Hey it's nice seeing you again !";
+
+      let findNumberOfWords = function (text) {
+        // Split the text by spaces and filter out empty strings (in case of extra spaces)
+        let words = text.split(" ").filter(word => word.length > 0);
+
+        // Return the number of words
+        return words.length;
+      };
+
+      let result = findNumberOfWords(text);
+      console.log(result); // Output: 6
+    </script>
+  </body>
+</html>

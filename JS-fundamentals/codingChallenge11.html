@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      //         Exercise-5 with Solution
+      // Write a JavaScript function that accepts a string as a parameter and converts the
+      // first letter of each word of the string in upper case.
+      // Example string : 'the quick brown fox'
+      // Expected Output : 'The Quick Brown Fox '
+      let sentence = "the quick brown fox";
+      let capitalizeFirstLetter = function () {
+        let seppareted = sentence.split(" ");
+        let capitalizedArray = [];
+        for (let i = 0; i < seppareted.length; i++) {
+          capitalizedArray.push(
+            seppareted[i][0].toUpperCase() + seppareted[i].substring(1)
+          );
+        }
+        return capitalizedArray.join(" ");
+      };
+      let result = capitalizeFirstLetter();
+      console.log(result);
+    </script>
+  </body>
+</html>

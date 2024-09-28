@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      // Write a JavaScript function to clone an array.
+      // let arr = ["Mango", "apple", "fish", "banana"];
+      // let copy = [];
+
+      // let copyArr = function () {
+      //   for (let i = 0; i < arr.length; i++) {
+      //     copy.push(arr[i]);
+      //   }
+      //   return copy;
+      // };
+      // let result = copyArr();
+      // console.log(arr);
+      // console.log(copy);
+
+      // let names = [
+      //   "Zak",
+      //   "Jonathon",
+      //   "Dwayne",
+      //   "Zak",
+      //   "Wilson",
+      //   "Zak",
+      //   "Brad",
+      //   "samantha",
+      //   "Zak",
+      // ];
+      // let arrayWithoutZAK = [];
+      // let filterOutName = function () {
+      //   let number;
+      //   let arrayOfZak = [];
+
+      //   for (let i = 0; i < names.length; i++) {
+      //     if (names[i].includes("Zak")) {
+      //       arrayOfZak.push(names[i]);
+      //     } else {
+      //       arrayWithoutZAK.push(names[i]);
+      //     }
+      //   }
+
+      //   arrayOfZak.filter(",");
+      //   number = arrayOfZak.length;
+
+      //   return `The remaining names are ${arrayWithoutZAK} removed ${number} of Zaks`;
+      // };
+      // let Output = filterOutName();
+      // console.log(Output);
+
+      // function digits(n) {
+      //   // TODO
+      //   let store = [];
+
+      //   n = String(n);
+      //   for (let i = 0; i < n.length; i++) {
+      //     store.push(n[i]);
+      //   }
+      //   return store.length;
+      // }
+      // let finalOutput = digits();
+      // console.log(finalOutput);
+      let str = "Mango";
+      let ending = "fid";
+      function solution(str, ending) {
+        // TODO: complete
+        let j;
+        let i;
+        let storeStr = [];
+        let storeEnd = [];
+
+        for (let i = ending.length - 1; i >= 0; i--) {
+          storeStr.push(str[i]);
+        }
+        for (let j = ending.length - 1; j >= 0; j--) {
+          storeEnd.push(ending[j]);
+        }
+        if (storeStr[i] == storeEnd[j]) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+      let result = solution(str, ending);
+      console.log(result);
+    </script>
+  </body>
+</html>

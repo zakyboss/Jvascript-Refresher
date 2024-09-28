@@ -1,55 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-        // // functions that calculates years until retirement 
-        // let yearsToRetireCalc= function (birthYear,firstname){
-        //  let yearsToRetire = 65 ;
-        //  let age = 2037-birthYear ;
-        //   let retirement= yearsToRetire-age
-        //   return `${firstname} retires in ${retirement} years`
-        // }
-        // console.log(yearsToRetireCalc(1999, 'Jake'))
+      // // functions that calculates years until retirement
+      // let yearsToRetireCalc= function (birthYear,firstname){
+      //  let yearsToRetire = 65 ;
+      //  let age = 2037-birthYear ;
+      //   let retirement= yearsToRetire-age
+      //   return `${firstname} retires in ${retirement} years`
+      // }
+      // console.log(yearsToRetireCalc(1999, 'Jake'))
 
-//       let calculateAge = function (birthYear){
-//             let age = 2037-birthYear;
-//             return age
-//       }
-//       let calculateRetirement=function(){
-//         let retirement = 65-calculateAge(1999)
-//            return retirement
-//       }
-// console.log(calculateRetirement())
-//   A simple function that chooses shape and calculates area 
-              let shapeSelector= function (shape){
-                    return shape
-              }
-              let areaCalculator = function (b,h){
-                let area ;
-              let shape =   shapeSelector('Square')
-    if (shape=='Triangle'){
-        area= (1/2*b*h)
-        console.log(`Your area is ${area} cm2`)
-    }
-    else if (shape=='Square'){
-        area = (b*b)
-        console.log(`Your area is ${area} cm2`)
-
-    }
-    else if (shape=='Rectangle'){
-        area = (b*h)
-        console.log(`Your area is ${area} cm2`)
-
-    }
-
-
-              }
-              console.log(areaCalculator(12,8))
+      //       let calculateAge = function (birthYear){
+      //             let age = 2037-birthYear;
+      //             return age
+      //       }
+      //       let calculateRetirement=function(){
+      //         let retirement = 65-calculateAge(1999)
+      //            return retirement
+      //       }
+      // console.log(calculateRetirement())
+      //   A simple function that chooses shape and calculates area
+      let shapeSelector = function (shape) {
+        return shape;
+      };
+      let areaCalculator = function (b, h) {
+        let area;
+        let shape = shapeSelector("Square");
+        if (shape == "Triangle") {
+          area = (1 / 2) * b * h;
+          console.log(`Your area is ${area} cm2`);
+        } else if (shape == "Square") {
+          area = b * b;
+          console.log(`Your area is ${area} cm2`);
+        } else if (shape == "Rectangle") {
+          area = b * h;
+          console.log(`Your area is ${area} cm2`);
+        }
+      };
+      console.log(areaCalculator(12, 8));
     </script>
-</body>
+  </body>
 </html>
