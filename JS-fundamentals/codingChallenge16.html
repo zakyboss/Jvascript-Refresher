@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use script";
+      const calculateAmplitude = function (temperature) {
+        temperature = [
+          3,
+          -2,
+          -6,
+          -1,
+          "error",
+          9,
+          68,
+          12,
+          17,
+          15,
+          14,
+          9,
+          500,
+          -23,
+          100,
+        ];
+
+        let withoutError = [];
+        for (let i = 0; i < temperature.length; i++) {
+          if (
+            temperature[i] == "error" ||
+            temperature[i] == "Error" ||
+            temperature[i] == "ERROR"
+          ) {
+          } else {
+            temperature.sort((a, b) => a - b);
+            withoutError.push(temperature[i]);
+            // let highestTemp = withoutError[0];
+          }
+        }
+
+        return withoutError[withoutError.length - 1] - withoutError[0];
+      };
+      let result = calculateAmplitude();
+      console.log(result);
+
+      let temperatures2 = [23, 15, 30, 25, 10];
+      let copy = temperatures2;
+      //   let sortedAscending = temperatures2.sort((a, b) => a - b);
+      let sortedDescending = copy.sort((b, a) => a - b);
+      console.log(sortedDescending);
+      //   console.log(copy);
+
+
+
+      
+
+
+
+
+
+    </script>
+  </body>
+</html>
