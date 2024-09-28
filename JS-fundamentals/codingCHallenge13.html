@@ -65,29 +65,77 @@
       //   return store.length;
       // }
       // let finalOutput = digits();
-      // console.log(finalOutput);
-      let str = "Mango";
-      let ending = "fid";
-      function solution(str, ending) {
-        // TODO: complete
-        let j;
-        let i;
-        let storeStr = [];
-        let storeEnd = [];
+      // // console.log(finalOutput);
+      // let str = "Mango";
+      // let ending = "fid";
+      // function solution(str, ending) {
+      //   // TODO: complete
+      //   let j;
+      //   let i;
+      //   let storeStr = [];
+      //   let storeEnd = [];
 
-        for (let i = ending.length - 1; i >= 0; i--) {
-          storeStr.push(str[i]);
+      //   for (let i = ending.length - 1; i >= 0; i--) {
+      //     storeStr.push(str[i]);
+      //   }
+      //   for (let j = ending.length - 1; j >= 0; j--) {
+      //     storeEnd.push(ending[j]);
+      //   }
+      //   if (storeStr[i] == storeEnd[j]) {
+      //     return true;
+      //   } else {
+      //     return false;
+      //   }
+      // }
+      // let result = solution(str, ending);
+      // console.log(result);
+      // Write a function that takes in a string of one or more words, and returns the same string,
+      //  but with all words that have five or more letters reversed (Just like the name of this Kata).
+      //   Strings passed in will consist of only letters and spaces.
+      // Spaces will be included only when more than one word is present.
+      // let snow = "The spiderman Movie is Amazing ";
+      // let string = snow.split(",");
+      // function spinWords(string) {
+      //   // string = "The spiderman Movie is Amazing "
+      //   let store = [];
+      //   for (let i = 0; i < string.length; i++) {
+      //     if (string[i].length >= 5) {
+      //       for (let j = string[i].length; j >= 0; j--) {
+      //         store.push(string[j]);
+      //       }
+      //     } else {
+      //       store.push(string[i]);
+      //     }
+      //   }
+      //   return store;
+      //   // TODO Have fun :)
+      // }
+
+      // let result = spinWords(String);
+      // console.log(result);
+      // let egg = "Egg is yummy";
+      // // egg.split(" ").reverse();
+
+      // console.log(egg.split(" ").reverse().join(" "));
+      // // console.log(result);
+
+      function spinWords(string) {
+        string = "The lazy wolverine climbed up the peeking mountain";
+
+        let words = string.split(" ");
+        let store = [];
+        // string.split(" ");
+        for (let i = 0; i < words.length; i++) {
+          if (words[i].length >= 5) {
+            store.push(words[i].split("").reverse().join(" "));
+          } else {
+            store.push(words[i]);
+          }
         }
-        for (let j = ending.length - 1; j >= 0; j--) {
-          storeEnd.push(ending[j]);
-        }
-        if (storeStr[i] == storeEnd[j]) {
-          return true;
-        } else {
-          return false;
-        }
+
+        return store.join(" ");
       }
-      let result = solution(str, ending);
+      let result = spinWords();
       console.log(result);
     </script>
   </body>
