@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- <meta name="viewport" content="width=, initial-scale=1.0" /> -->
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      let reverseVowels = function (sentence) {
+        let words = sentence.split(" ");
+        let store = [];
+        for (let i = 0; i < words.length; i++) {
+          for (let j = 0; j < words[i].length; j++) {
+            if (
+              words[j] == "a" ||
+              words[j] == "e" ||
+              words[j] == "i" ||
+              words[j] == "O" ||
+              words[j] == "u"
+            ) {
+              store.push(words[i][j].split(" ").reverse().join(" "));
+              //   console.log(words);
+            } else {
+              store.push(words[i]);
+            }
+          }
+        }
+
+        return words.join(" ");
+      }; // }
+
+      let output = reverseVowels("Henry is an amazing mango eater ");
+      console.log(output);
+    </script>
+  </body>
+</html>
