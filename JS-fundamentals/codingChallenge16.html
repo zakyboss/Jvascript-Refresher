@@ -8,59 +8,79 @@
   <body>
     <script>
       "use script";
-      const calculateAmplitude = function (temperature) {
-        temperature = [
-          3,
-          -2,
-          -6,
-          -1,
-          "error",
-          9,
-          68,
-          12,
-          17,
-          15,
-          14,
-          9,
-          500,
-          -23,
-          100,
-        ];
+      //   const calculateAmplitude = function (temperature) {
+      //     temperature = [
+      //       3,
+      //       -2,
+      //       -6,
+      //       -1,
+      //       "error",
+      //       9,
+      //       68,
+      //       12,
+      //       17,
+      //       15,
+      //       14,
+      //       9,
+      //       500,
+      //       -23,
+      //       100,
+      //     ];
 
-        let withoutError = [];
-        for (let i = 0; i < temperature.length; i++) {
-          if (
-            temperature[i] == "error" ||
-            temperature[i] == "Error" ||
-            temperature[i] == "ERROR"
-          ) {
-          } else {
-            temperature.sort((a, b) => a - b);
-            withoutError.push(temperature[i]);
-            // let highestTemp = withoutError[0];
-          }
+      //     let withoutError = [];
+      //     for (let i = 0; i < temperature.length; i++) {
+      //       if (
+      //         temperature[i] == "error" ||
+      //         temperature[i] == "Error" ||
+      //         temperature[i] == "ERROR"
+      //       ) {
+      //       } else {
+      //         temperature.sort((a, b) => a - b);
+      //         withoutError.push(temperature[i]);
+      //         // let highestTemp = withoutError[0];
+      //       }
+      //     }
+
+      //     return withoutError[withoutError.length - 1] - withoutError[0];
+      //   };
+      //   let result = calculateAmplitude();
+      //   console.log(result);
+
+      //   let temperatures2 = [23, 15, 30, 25, 10];
+      //   let copy = temperatures2;
+      //   //   let sortedAscending = temperatures2.sort((a, b) => a - b);
+      //   let sortedDescending = copy.sort((b, a) => a - b);
+      //   console.log(sortedDescending);
+      let addNumber = function (n) {
+        // let newSum;
+        let storeAnswer = 0; // This will store the sum of digits
+        n = String(n); // Convert the number to a string
+        let storeArr = n.split(""); // Split the string into individual characters (digits)
+
+        // First loop: sum the digits of the number
+        for (let i = 0; i < storeArr.length; i++) {
+          storeAnswer += Number(storeArr[i]); // Add the digits together
         }
 
-        return withoutError[withoutError.length - 1] - withoutError[0];
+        // Now, we check if the sum has more than one digit
+        while (storeAnswer >= 10) {
+          newSum = 0; // Temporary variable for the new sum
+          let splitMore = String(storeAnswer).split(""); // Split the sum into individual digits again
+
+          // Second loop: sum the digits of the current sum
+          for (let j = 0; j < splitMore.length; j++) {
+            newSum += Number(splitMore[j]); // Sum the digits again
+          }
+
+          newSum; // Update storeAnswer with the new sum
+        }
+
+        return newSum; // Return the final result (single digit)
       };
-      let result = calculateAmplitude();
-      console.log(result);
 
-      let temperatures2 = [23, 15, 30, 25, 10];
-      let copy = temperatures2;
-      //   let sortedAscending = temperatures2.sort((a, b) => a - b);
-      let sortedDescending = copy.sort((b, a) => a - b);
-      console.log(sortedDescending);
-      //   console.log(copy);
-
-
-
-      
-
-
-
-
-
+      let result = addNumber(1233642376453463767);
+      console.log(result); // Output will be 6
+      // Output will be 6
     </script>
   </body>
 </html>

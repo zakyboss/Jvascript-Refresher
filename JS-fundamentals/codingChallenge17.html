@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      // Given n, take the sum of the digits of n. If that value has more than one digit, continue
+      //  reducing in this way until a single-digit number is produced.
+      // The input will be a non-negative integer.
+      let digitalRoot = function (n) {
+        n = String(n);
+        let storeArr = n.split(" ");
+        let storeAns = 0;
+        while (storeAns.length > 1) {
+          storeAns = 0;
+          for (let i = 0; i < storeArr.length; i++) {
+            storeArr[i] = Number(storeArr[i]);
+            storeAns += storeArr[i];
+          }
+                    storeAns = Number(n);
+        }
+        return storeAns;
+      };
+      let result = digitalRoot(121);
+      console.log(result);
+    </script>
+  </body>
+</html>
