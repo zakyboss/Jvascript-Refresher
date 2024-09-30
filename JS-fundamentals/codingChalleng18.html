@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict ";
+      // Here are the temperatures from a company that deals in thermometors  database , find the Amplitude ,
+      //  also note that sometimes errors may be picked up
+      // const temperatures = [3, -2, -6, -1, "error", 9, 13, 17, 15, 14, 9, 5];
+      // const findAmplitude = function (temperatures) {
+      //   temperatures = temperatures.sort((a, b) => a - b);
+      //   let storeSorted = [];
+      //   let storeError = [];
+      //   for (let i = 0; i < temperatures.length; i++) {
+      //     if (temperatures[i] != "error") {
+      //       storeSorted.push(temperatures[i]);
+      //     } else {
+      //       storeError.push(temperatures[i]);
+      //     }
+      //   }
+
+      //   return storeSorted[storeSorted.length - 1] - storeSorted[0];
+      // };
+      // const storeAmplitude = findAmplitude(temperatures);
+      // console.log(storeAmplitude);
+
+      let numbers = [2, 2, 3, 3, 5, 5, 11, 6, 6];
+
+      let findOdd = function (numbers) {
+        let sumOfNumbers = 0;
+        let sumOfDuplicates = 0;
+        let seen = new Set();
+
+        for (let i = 0; i < numbers.length; i++) {
+          sumOfNumbers += numbers[i];
+
+          for (let j = i + 1; j < numbers.length; j++) {
+            if (numbers[i] === numbers[j] && !seen.has(numbers[i])) {
+              sumOfDuplicates += numbers[i] * 2;
+              seen.add(numbers[i]);
+              break;
+            }
+          }
+        }
+
+        return sumOfNumbers - sumOfDuplicates;
+      };
+
+      let result = findOdd(numbers);
+      console.log(result);
+    </script>
+  </body>
+</html>
