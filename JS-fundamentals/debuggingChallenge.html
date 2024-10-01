@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      let minimumTemps = [17, 21, 3];
+      let printForecast = function (minimumTemps) {
+        let dots = "..."; // The dots to print
+        let forecastStr = ""; // String to hold the forecast output
+
+        for (let i = 0; i < minimumTemps.length; i++) {
+          let days = i + 1; // Since days start from 1, increment by 1
+          forecastStr += `${dots} ${minimumTemps[i]}°C in ${days} days  `;
+        }
+
+        return forecastStr;
+      };
+      console.log(printForecast(minimumTemps));
+    </script>
+  </body>
+</html>
