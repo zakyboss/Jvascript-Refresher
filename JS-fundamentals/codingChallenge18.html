@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+
+      let checkIfAnagram = function (word1, word2) {
+        let storeWord1 = word1.split("").sort().join("");
+        let storeWord2 = word2.split("").sort().join("");
+
+        if (storeWord1 == storeWord2) {
+          return true;
+        } else {
+          return false;
+        }
+        // return `${storeWord1} ${storeWord2}`;
+      };
+      let result = checkIfAnagram("fish", "shif");
+      console.log(result);
+    </script>
+  </body>
+</html>
