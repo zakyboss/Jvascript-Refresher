@@ -26,3 +26,10 @@ for (let i = 0; i < btnsShowModal.length; i++) {
 // Add event listeners for closing the modal
 btnCloseModal.addEventListener('click', closeModal);
 overlay.addEventListener('click', closeModal);
+document.addEventListener('keydown', function(e){
+if (e.key =='Escape')
+{
+    modal.style.display = 'none'; // Set the modal display to 'none' to hide it
+    overlay.style.display = 'none'; // Optionally hide the overlay 
+}
+})
