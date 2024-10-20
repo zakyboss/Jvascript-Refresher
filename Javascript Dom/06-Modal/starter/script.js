@@ -32,4 +32,12 @@ if (e.key =='Escape')
     modal.style.display = 'none'; // Set the modal display to 'none' to hide it
     overlay.style.display = 'none'; // Optionally hide the overlay 
 }
-})
+})   
+
+let calculateArea =  ()=>
+  {let age = Number(window.prompt ("Please enter age"))
+
+    return `Your year of birth is ${2024-age}`
+}
+let result = calculateArea()
+console.log(result)
