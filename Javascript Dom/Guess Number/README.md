@@ -1,0 +1,2 @@
+This a game where a user has to guess a number between 1-20 , each time the user gets the correct number the highscore updates if the user however misses to get it the highscore reduces by 1 
+To aid in getting the right number the user gets hints such as if the number is too high or too 
