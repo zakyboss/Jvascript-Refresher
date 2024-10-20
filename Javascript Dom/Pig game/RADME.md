@@ -1,0 +1,1 @@
+This i s a dice game with two users who compete to reach 100 score , the two users each take turns to play by pressing hold until user hits a 1 which is then automatically the other user's  turn begins
