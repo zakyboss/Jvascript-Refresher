@@ -34,10 +34,3 @@ if (e.key =='Escape')
 }
 })   
 
-let calculateArea =  ()=>
-  {let age = Number(window.prompt ("Please enter age"))
-
-    return `Your year of birth is ${2024-age}`
-}
-let result = calculateArea()
-console.log(result)

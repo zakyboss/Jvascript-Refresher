@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict ";
+      Problem: "Digital Root";
+      // Write a JavaScript function digitalRoot(n) that takes a number n and returns its digital root.
+      //  The digital root is obtained by repeatedly
+      //  summing the digits of a number until a single-digit number is produced.
+      let n = 213;
+
+      let digitalRoot = function (n) {
+        let storeOutput = 0;
+
+        let arrayOfNumbers = String(n);
+        // arrayOfNumbers.split(" ");
+        arrayOfNumbers = arrayOfNumbers.split(" ");
+        while (arrayOfNumbers.length >= 10) {
+          for (let i = 0; i < arrayOfNumbers.length; i++) {
+            storeOutput += Number(arrayOfNumbers[i]);
+          }
+        }
+        return storeOutput;
+      };
+      let result = digitalRoot(n);
+      console.log(result);
+    </script>
+  </body>
+</html>
