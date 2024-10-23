@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   Take 2 strings s1 and s2 including only letters from a to z. Return a new sorted string (alphabetical ascending), the longest possible, containing distinct letters - each taken only once - coming from s1 or s2.
+
+      // Examples:
+      // a = "xyaabbbccccdefww"
+      // b = "xxxxyyyyabklmopq"
+      // longest(a, b) -> "abcdefklmopqwxy"
+
+      // a = "abcdefghijklmnopqrstuvwxyz"
+      // longest(a, a) -> "abcdefghijklmnopqrstuvwxyz"
+      let s1 = "xyaabbbccccdefww";
+      let s2 = "xxxxyyyyabklmopq";
+      let findLongest = function longest(s1, s2) {
+        let storeResult = [];
+        let sum = s1 + s2;
+        let sorted = [...new Set(sum.split("").sort())];
+        return sorted.join("");
+      };
+      let result = findLongest(s1, s2);
+      console.log(result);
+    </script>
+  </body>
+</html>
