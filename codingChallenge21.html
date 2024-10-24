@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      'use strict';
+      let checkPalindrome = function (word) {
+        let mid = Math.floor(word.length / 2);
+        for (let i = 0; i < mid; i++) {
+          let j = word.length - 1 - i;
+          if (word[i] !== word[j]) {
+            return false;
+          }
+        }
+        return true;
+      };
+      let result = checkPalindrome('civic');
+      console.log(result);
+    </script>
+  </body>
+</html>

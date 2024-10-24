@@ -51,3 +51,10 @@ console.log(first1,second)
 // console.log(j,k,l)
 
 console.log(restaurant.order(1,2))
+// Destracturing nested Arrays 
+let fruits = ['Mango','Avocado',['Strawberry','Blue-berry']]
+// let [firstFruitSet, ,secondArr]=fruits
+let [firstFruitSet, ,[insideArr1, insideArr2]]=fruits
+
+console.log(firstFruitSet,insideArr1,insideArr2)
+// DEFAULT VALUES 
