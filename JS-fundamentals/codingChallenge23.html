@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      function maskify(cc) {
+        let storeTheHashed = [];
+        cc = String(cc);
+        let storeTheLastFour = cc.slice(-4);
+        let storeTheRest = cc.slice(0, -4).replace(/./g, "#");
+
+        let output = storeTheRest + storeTheLastFour;
+        return output;
+      }
+      let result = maskify(5362366378);
+      console.log(result);
+    </script>
+  </body>
+</html>

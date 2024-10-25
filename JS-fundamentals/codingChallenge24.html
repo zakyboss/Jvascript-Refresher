@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Persistance</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      function persistence(num) {
+        num = String(num); // Convert number to string to access digits
+        let storeOccurence = [];
+        while (num.length > 1) {
+          // Continue until a single digit is left
+          let product = 1; // Initialize product to 1 for multiplication
+
+          for (let i = 0; i < num.length; i++) {
+            product *= Number(num[i]); // Multiply each digit
+          }
+          storeOccurence.push("#");
+
+          num = String(product); // Update num with the new product as a string
+        }
+
+        return storeOccurence.length; // Return the final single-digit number
+      }
+      let result = persistence(4282);
+      console.log(result);
+    </script>
+  </body>
+</html>
