@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      'use strict';
+      const restaurant = {
+        name: 'Classico Italiano',
+        location: 'Via Angelo Tavanti 23, Firenze, Italy',
+        categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+        starterMenu: [
+          'Focaccia',
+          'Bruschetta',
+          'Garlic Bread',
+          'Caprese Salad',
+        ],
+        mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+        order: function (starterIndex, mainIndex) {
+          return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+        },
+        orderPizza: function () {
+          console.log(
+            `Here is your order of pizza with ingredients ${ing1},${ing2},${ing3},`
+          );
+        },
+      };
+      let ingredients = [
+        prompt('please enter ing 1'),
+        prompt('please enter ing 1'),
+        prompt('please enter ing 1'),
+      ];
+      restaurant.orderPizza(...ingredients);
+
+      let ages = [21, 23, 34];
+      //   let classAges = [13, 12, ages[0], ages[2], ages[3]];
+      let classAges = [13, 12, ...ages];
+      console.log(classAges);
+      let newMenu = [...restaurant.mainMenu, 'Gnocci'];
+      let combinedMenu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+      console.log(combinedMenu);
+
+      let name = 'Zakyboss';
+      let name2 = [...name];
+      for (let i = 0; i < name2.length; i++) {
+        console.log(name2[i]);
+      }
+
+      // console.log(name2);
+    </script>
+  </body>
+</html>

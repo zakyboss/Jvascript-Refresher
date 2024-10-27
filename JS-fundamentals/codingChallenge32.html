@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      //     An isogram is a word that has no repeating letters, consecutive or non-consecutive.
+      //     Implement a function that determines whether a string that contains only letters is an
+      //      isogram. Assume the empty string is an isogram. Ignore letter case.
+      function isIsogram(str) {
+        // let str2 = str.toLowerCase;
+        let storeIndividualValues = str.split("");
+        for (let i = 0; i < storeIndividualValues.length; i++) {
+          for (let j = i + 1; j < storeIndividualValues.length; j++) {
+            if (storeIndividualValues[i] === storeIndividualValues[j]) {
+              return false; // If a duplicate is found, return false immediately
+            }
+          }
+        }
+        return true; // If no duplicates found, it's an isogram
+      }
+
+      let result = isIsogram("sp");
+      console.log(result); // Output: false
+    </script>
+  </body>
+</html>
