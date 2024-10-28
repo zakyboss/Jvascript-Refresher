@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      function accum(s) {
+        // your code
+        let storeValue = [];
+        for (let i = 0; i < s.length; i++) {
+          storeValue.push(s[i].toUpperCase() + s[i].toLowerCase().repeat(i));
+        }
+
+        return storeValue.join("-");
+      }
+      let result = accum("abcd");
+        console.log(result);
+      //     //    question 2
+      //     For each character in the string:
+      // Convert it to uppercase.
+      // Repeat it index + 1 times (where index is the position of the character in the string).
+      let solution = function (string) {
+        let storeResult = [];
+        for (let i = 0; i < string.length; i++) {
+          //   let j = i;
+
+          storeResult.push(
+            string[i].toUpperCase() + string[i].toLowerCase().repeat(i)
+          );
+        }
+        return storeResult.join("_");
+      };
+      let output = solution("abcd");
+      console.log(output);
+    </script>
+  </body>
+</html>
