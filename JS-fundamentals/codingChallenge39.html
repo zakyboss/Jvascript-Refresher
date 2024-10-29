@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      //         ATM machines allow 4 or 6 digit PIN codes and PIN codes cannot contain
+      //         anything but exactly 4 digits or exactly 6 digits.
+
+      // If the function is passed a valid PIN string, return true, else return false.
+
+      // Examples (Input --> Output)
+      // "1234"   -->  true
+      // "12345"  -->  false
+      // "a234"   -->  false
+      function validatePIN(pin) {
+        //return true or false
+        pin = String(pin);
+        let storeIndividualValue = pin.split("");
+        for (let i = 0; i < storeIndividualValue.length; i++) {
+          if (isNaN(pin[i])) {
+            return false;
+            break;
+          }
+        }
+        if (
+          storeIndividualValue.length === 4 ||
+          storeIndividualValue.length === 6
+        ) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+      let result = validatePIN("12333");
+      console.log(result);
+    </script>
+  </body>
+</html>
