@@ -1,13 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-        'use strict'
+      "use strict";
+
+      // Write Number in Expanded Form
+      // You will be given a number and
+      //         For example:
+
+      //    12 --> "10 + 2"
+      //    45 --> "40 + 2"
+      // 70304 --> "70000 + 300 + 4"
+      function expandedForm(num) {
+        // Your code here
+        let storeTotalValue = [];
+        num = String(num);
+        let count = 0;
+        for (let i = 0; i < num.length; i++) {
+          count = num.length - i;
+          count--;
+          let zero = "0";
+          if (num[i] !== "0") {
+            storeTotalValue.push(num[i] + zero.repeat(count));
+          }
+        }
+        storeTotalValue = storeTotalValue.join(" + ");
+
+        return storeTotalValue;
+      }
+      let result = expandedForm(70304);
+      console.log(result);
     </script>
-</body>
+  </body>
 </html>
