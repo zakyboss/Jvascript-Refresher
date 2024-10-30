@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      //           Complete the solution so that the function
+      //           will break up camel casing, using a space between words.
+
+      //   Example
+      //   "camelCasing"  =>  "camel Casing"
+      //   "identifier"   =>  "identifier"
+      //   ""             =>  ""
+      function solution(string) {
+        let smallCase = string.toLowerCase();
+        let output = string;
+        for (let i = 0; i < string.length; i++) {
+          if (string[i] !== smallCase[i]) {
+            output = output.replace(`${string[i]}`, ` ${string[i]}`);
+          }
+        }
+        return output;
+
+        // return "";
+      }
+      let result = solution("camelCasingTest");
+      console.log(result);
+    </script>
+  </body>
+</html>
