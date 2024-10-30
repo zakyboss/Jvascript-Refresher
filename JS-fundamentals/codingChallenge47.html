@@ -38,24 +38,53 @@
       //   }
       //   let result = twoSum([1, 2, 3], 4);
       //   console.log(result);
-      let putZerosEnd = function (numbers) {
-        for (let i = 0; i < numbers.length - 1; i++) {
-          let j = i + 1;
+      //   let putZerosEnd = function (numbers) {
+      //     for (let i = 0; i < numbers.length - 1; i++) {
+      //       let j = i + 1;
 
-          // If both current and next elements are zero, skip
-          if (numbers[i] === 0 && numbers[j] === 0) {
+      //       // If both current and next elements are zero, skip
+      //       if (numbers[i] === 0 && numbers[j] === 0) {
+      //         continue;
+      //       }
+
+      //       // If current is zero and next is non-zero, swap
+      //       if (numbers[i] === 0 && numbers[j] !== 0) {
+      //         [numbers[i], numbers[j]] = [numbers[j], numbers[i]];
+      //       }
+      //     }
+      //     return numbers;
+      //   };
+      //   let results = putZerosEnd([0, 1, 0, 3, 12]);
+      //   console.log(results);
+      //     Question: Rearrange Array by Moving Negatives to the Beginning
+      // Given an array of integers, rearrange the elements so that all negative
+      //  numbers appear at the beginning of the array, followed by the non-negative numbers.
+      //  The relative order of elements within each group does not need to be maintained.
+
+      // Example:
+      // Input:
+      // [3, -2, -1, 4, -5, 6]
+
+      // Output:
+      // [-2, -1, -5, 3, 4, 6]
+      let reArrangeNegative = function (numbers) {
+        let j = 0;
+
+        for (let i = 0; i < numbers.length; i++) {
+          if (numbers[j] < 0 && numbers[i] < 0) {
             continue;
           }
-
-          // If current is zero and next is non-zero, swap
-          if (numbers[i] === 0 && numbers[j] !== 0) {
-            [numbers[i], numbers[j]] = [numbers[j], numbers[i]];
+          if (numbers[j] > 0 && numbers[i] < 0) {
+            [numbers[j], numbers[i]] = [numbers[i], numbers[j]];
+            j++;
           }
         }
+
         return numbers;
       };
-      let results = putZerosEnd([0, 1, 0, 3, 12]);
+      let results = reArrangeNegative([-1, -2, -3]);
       console.log(results);
+      //   console.log(results);
     </script>
   </body>
 </html>
