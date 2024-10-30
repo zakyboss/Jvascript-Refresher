@@ -1,11 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      //     <!-- What is considered Valid?
+      // A string of braces is considered valid if all braces are matched with the correct brace.
+
+      // Examples
+      // "(){}[]"   =>  True
+      // "([{}])"   =>  True
+      // "(}"       =>  False
+      // "[(])"     =>  False
+      // "[({})](]" =>  False -->
+
+      function validBraces(braces) {
+        //TODO
+        const openings = ['[', '{', '('];
+const closings = [']', '}', ')'];
+
+// Create a mapping of opening brackets to their corresponding closing brackets
+const bracketPairs = {
+  '[': ']',
+  '{': '}',
+  '(': ')',
+};
+
+// Check if openings[0] matches the closing when reversed (i.e., if it has a matching pair)
+const isMatch = (open, close) => bracketPairs[open] === close;
+     
+}
+      let result = validBraces("(){}[]");
+      console.log(result);
+      
+    </script>
+  </body>
 </html>

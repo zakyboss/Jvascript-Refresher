@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      //         You live in the city of Cartesia where all roads are laid out in a perfect grid.
+      //         You arrived ten minutes too early to an appointment, so you decided to take the opportunity to go
+      //         for a short walk. The city provides its citizens with a Walk Generating App on their phones --
+      //         everytime you press the button it sends you an array of one-letter strings representing
+      //         directions to walk (eg. ['n', 's', 'w', 'e']). You always walk only a single block for each
+      //         letter (direction) and you know it takes you one minute to traverse one city block,
+      //         so create a function that will return true if the walk the app gives you will take you
+      //         exactly ten minutes (you don't want to be early or late!) and will, of course, return
+      //          you to your starting point. Return false otherwise.
+
+      // Note: you will always receive a valid array containing a random
+      //  assortment of direction letters ('n', 's', 'e', or 'w'
+      // only). It will never give you an empty array (that's not a walk, that's standing still!).
+
+      function isValidWalk(walk) {
+        let x = 0; // Horizontal movement (east-west)
+        let y = 0; // Vertical movement (north-south)
+
+        // Loop through each direction in the walk array
+        for (let i = 0; i < walk.length; i++) {
+          if (walk[i] === "n") y++; // Move up
+          if (walk[i] === "s") y--; // Move down
+          if (walk[i] === "e") x++; // Move right
+          if (walk[i] === "w") x--; // Move left
+        }
+
+        // Return true if we're back at the starting point and took exactly 10 minutes
+        return walk.length === 10 && x === 0 && y === 0;
+      }
+
+      // Test case
+      let result = isValidWalk(["n", "s", "w", "e"]);
+      console.log(result);
+    </script>
+  </body>
+</html>
