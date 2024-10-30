@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //         'use strict'
+      //         Question: Move All Even Numbers to the Front
+      // Given an array of integers, rearrange the elements so that all even
+      //  numbers appear at the beginning of the array, followed by all odd numbers. The relative order of even and odd numbers does not need to be maintained.
+
+      // Example:
+      // Input:
+      // [3, 4, 1, 2, 6, 5]
+
+      // Output:
+      // [4, 2, 6, 3, 1, 5] (or any other arrangement with evens at the front)
+      let moveEvenFront = function (numbers) {
+        let j = 0;
+        for (let i = 0; i < numbers.length; i++) {
+          if (numbers[j] % 2 == 0 && numbers[i] % 2 == 0) {
+            continue;
+          }
+          if (numbers[j] % 2 !== 0 && numbers[i] % 2 == 0) {
+            [[numbers[j], numbers[i]]] = [[numbers[i], numbers[j]]];
+            j++;
+          }
+        }
+        return numbers;
+      };
+      let result = moveEvenFront([3, 3, 4, 1, 2, 6, 5]);
+      console.log(result);
+    </script>
+  </body>
+</html>
