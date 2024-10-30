@@ -1,13 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-        'use strict'
-    </script>
-</body>
+      "use strict";
+      let names = new Set([
+        "Zakyboss",
+        "Hen",
+        "Zak",
+        "Tun",
+        "Tun",
+        "",
+        "Zakyboss",
+      ]);
+      //   You can actually put a string inside set
+      console.log(names);
+      let string = new Set("Zakyboss");
+
+      console.log(string);
+
+      //  ********     Working with sets ********
+      //  1. sets are like arrays because they dont have  key value pairs
+      // 2 . A set order does not matter
+
+      //    METHODS ON SETS
+      // A )      SIZE
+      // Used to check size of a set
+      // example
+      let numbers = new Set([1, 2, 3, 45, 5]);
+      console.log(numbers.size);
+
+      //   B)    Has or Contains a Certain value
+      //    similar to includes method in array
+      //  return a boolean true or false
+      // the values have to match if what you are checking is a number .has(should be a number)
+      // example
+      console.log(numbers.has(2));
+
+      //   C ) add elements
+      //  similar to .push in arrays
+      // example
+      numbers.add("Zakyboss");
+      console.log(numbers);
+
+      //   D ) Delete
+      // remove a specific element you desire to be removed
+      numbers.delete("Zakyboss");
+      console.log(numbers);
+       
+    //   E ) To clear elements 
+    // example numbers.clear()
+         //  used to remove all elements 
+
+    //    There is no way to retrieve values from a set 
+  
+  
+  </script>
+  </body>
 </html>
