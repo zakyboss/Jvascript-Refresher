@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      //         There is an array of strings. All strings contains similar letters except one. Try to find it!
+
+      // findUniq([ 'Aa', 'aaa', 'aaaaa', 'BbBb', 'Aaaa', 'AaAaAa', 'a' ]) === 'BbBb'
+      // findUniq([ 'abc', 'acb', 'bac', 'foo', 'bca', 'cab', 'cba' ]) === 'foo'
+      // Strings may contain spaces. Spaces are not significant, only non-spaces symbols matters. E.g.
+      // string that contains only spaces is like empty string.
+      function findUniq(arr) {
+        // Determine the common pattern by comparing the first two elements with the third
+        let storeCommon;
+        if (
+          arr[0].toLowerCase().split("").sort().join("") ===
+          arr[1].toLowerCase().split("").sort().join("")
+        ) {
+          storeCommon = arr[0].toLowerCase().split("").sort().join("");
+        } else if (
+          arr[0].toLowerCase().split("").sort().join("") ===
+          arr[2].toLowerCase().split("").sort().join("")
+        ) {
+          storeCommon = arr[0].toLowerCase().split("").sort().join("");
+        } else {
+          storeCommon = arr[1].toLowerCase().split("").sort().join("");
+        }
+
+        // Find and return the unique element that doesn't match storeCommon
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i].toLowerCase().split("").sort().join("") !== storeCommon) {
+            return arr[i];
+          }
+        }
+
+        return null; // Return null if no unique element is found
+      }
+
+      let output = findUniq([
+        "Aa",
+        "aaa",
+        "aaaaa",
+        "BbBb",
+        "Aaaa",
+        "AaAaAa",
+        "a",
+      ]);
+      console.log(output); // Output should be "BbBb"
+    </script>
+  </body>
+</html>
