@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      //         There is an array with some numbers. All numbers are equal except for one. Try to find it!
+
+      // findUniq([ 1, 1, 1, 2, 1, 1 ]) === 2
+      // findUniq([ 0, 0, 0.55, 0, 0 ]) === 0.55
+      // It’s guaranteed that array contains at least 3 numbers.
+      //   function findUniq(arr) {
+      //     let arrSumValue = 0;
+      //     let storeRepeated = [];
+      //     let repeatedSumValue = 0;
+      //     for (let i = 0; i < arr.length; i++) {
+      //       let j = i + 1;
+      //       if (arr[i] !== arr[j]) {
+      //         storeRepeated.push(arr[i]);
+      //         // return storeRepeated.join("");
+      //       }
+      //       for (const value of arr) {
+      //         arrSumValue += value;
+      //       }
+      //       for (const value2 of storeRepeated) {
+      //         repeatedSumValue += value2;
+      //       }
+      //       //   for (let j = i + 1; j < arr.length; j++) {
+      //       //     if (arr[j] === arr[i]) {
+      //       //       continue;
+      //       // //     }
+      //       //     if (arr[j] !== arr[i]) {
+      //       //       storeOutput.push(arr[j]);
+      //       //       return storeOutput;
+      //       //     }
+      //     }
+      //     return arrSumValue;
+      //   }
+      // do magic
+      function findUniq(arr) {
+        let repeatingNum;
+        if (arr[0] === arr[1]) {
+          repeatingNum = arr[0];
+        } else {
+          repeatingNum = arr[2];
+        }
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i] !== repeatingNum) {
+            return arr[i];
+          }
+        }
+      }
+      let result = findUniq([0, 0, 0.55, 0, 0]);
+      console.log(result);
+    </script>
+  </body>
+</html>
