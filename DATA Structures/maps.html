@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      // Maps are another type of data structures that are similar to array but this one can accept any data type
+      // even key value pairs and objects
+      // *************Creating a Map************
+      const restaurant = new Map();
+         Maps are arranged in Key of 
+      // You dont pass anything in the brackets of Map
+      // **************Adding Something to map ***************
+      restaurant.set("name", "Hotel Calisto");
+      // Assuming that the hotel has various locations
+      restaurant.set(1, "Nairobi Kenya");
+      restaurant.set(2, "Moscow Russia");
+      // Note everytime you set something the map is returned with the included element that has been set e.g
+      let temp = restaurant.set("License", "Davincii Committee");
+      console.log(temp);
+      console.log(restaurant);
+    </script>
+  </body>
+</html>
