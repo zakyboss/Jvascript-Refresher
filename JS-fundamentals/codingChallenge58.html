@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      //     Check to see if a string has the same amount of 'x's and 'o's.
+      //     The method must return a boolean and be case insensitive. The string can contain any char.
+
+      // Examples input/output:
+
+      // XO("ooxx") => true
+      // XO("xooxx") => false
+      // XO("ooxXm") => true
+      // XO("zpzpzpp") => true // when no 'x' and 'o' is present should return true
+      // XO("zzoo") => false
+      function XO(str) {
+        //code here
+        str = [...str.toLowerCase()];
+        let storeOs = str.filter(value => value == "o");
+        let storeXs = str.filter(value => value == "x");
+        if (storeOs.length && storeXs.length < 0) {
+          return true;
+        }
+        if (storeOs.length == storeXs.length) {
+          return true;
+        }
+        return false;
+      }
+      let output = XO("ooxx");
+      console.log(output);
+    </script>
+  </body>
+</html>
