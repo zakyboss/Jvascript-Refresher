@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      //         In mathematics, the factorial of a non-negative integer n, denoted by n!, is the product of all positive integers less than or equal to n. For example: 5! = 5 * 4 * 3 * 2 * 1 = 120. By convention the value of 0! is 1.
+
+      // Write a function to calculate factorial for a given input. If input is below 0 or above
+      // 12 throw an exception of type ArgumentOutOfRangeException (C#) or IllegalArgumentException (Java)
+      // or RangeException (PHP) or throw a RangeError
+      // (JavaScript) or ValueError (Python) or return -1 (C).
+      function factorial(n) {
+        let storeFactorial = [];
+        if (n >= 0 && n <= 12) {
+          let count = 1;
+          while (n <= 12 && n > 0) {
+            n--;
+            storeFactorial.push(n);
+          }
+          let store = storeFactorial.map(number => (count += number * count));
+          return store[store.length - 1];
+        } else {
+          throw new Error("The number is either above 12 or is lower than 0");
+        }
+      }
+      let output = factorial(12);
+      console.log(output);
+    </script>
+  </body>
+</html>
