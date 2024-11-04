@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      const airLines = "Kenya Airways";
+      const plane = "Airline 3130";
+      // we can use indexing to get value at certain index
+      console.log(plane[0]);
+      console.log(plane[1]);
+
+      //   **********   STRING METHODS *********
+      //  1. INDEX OF
+      console.log(plane.indexOf("k"));
+      console.log(plane.lastIndexOf("3"));
+
+      //  2. Slice
+      console.log(plane.slice(2));
+      // The result is called substring
+      //  slice doesnt mutate the original string
+      // You have to store the result in a variable
+      console.log(plane.slice(2, 4));
+
+      // using indexOf Plus substring
+      console.log(plane.slice(0, plane.indexOf(" ")));
+      //  Practise Question 1
+      // Write a function that takes in user seat choice and
+      //  says if it is middle seat or not
+
+      const checkMiddleSeat = function (seat) {
+        // B and E are middle seat
+        let s = seat.slice(-1);
+        if (s === "B" || s === "E") {
+          console.log(`You got bad seat`);
+        } else {
+          console.log(`You got lucky `);
+        }
+      };
+      let storeOutput = checkMiddleSeat("A23B");
+      console.log(storeOutput);
+    </script>
+  </body>
+</html>

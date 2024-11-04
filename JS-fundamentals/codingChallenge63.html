@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict ";
+      //         Don't give me five!
+      // In this kata you get the start number and the end number of a region
+      // and should return the count of all numbers except numbers with a 5 in it.
+      // The start and the end number are both inclusive!
+
+      // Examples:
+
+      // 1,9 -> 1,2,3,4,6,7,8,9 -> Result 8
+      // 4,17 -> 4,6,7,8,9,10,11,12,13,14,16,17 -> Result 12
+      // The result may contain fives. ;-)
+      // The start number will always be smaller than the end number. Both numbers can be also negative!
+      function dontGiveMeFive(start, end) {
+        let storeNumbers = [];
+        for (let i = start; i <= end; i++) {
+          let storeI = i;
+          storeI = String(i);
+          if (!storeI.includes("5")) {
+            storeNumbers.push(i);
+          }
+        }
+        if (storeNumbers.length>0 ){
+            return storeNumbers.length 
+        } else {
+            return 0 
+        }
+      }
+      let output = dontGiveMeFive(4, 17);
+      console.log(output);
+    </script>
+  </body>
+</html>
