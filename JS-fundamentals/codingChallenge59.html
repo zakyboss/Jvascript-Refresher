@@ -24,26 +24,39 @@
       //  whether the given number is a Narcissistic number in base 10.
 
       // This may be True and False in your language, e.g. PHP.
-      function narcissistic(value) {
-        // Code me to return true or false
-        let stringifyValue = String(value);
-        stringifyValue = [...stringifyValue];
-        let storeValuePow = stringifyValue.map(
-          e => Number(e) ** stringifyValue.length
-        );
-        let sum = 0;
-        for (let element of storeValuePow) {
-          Number(element);
-          sum += element;
-        }
-        if (sum == value) {
-          return true;
-        }
-        return false;
-        // return sum;
-      }
-      let output = narcissistic(1652);
-      console.log(output);
+      //   function narcissistic(value) {
+      //     // Code me to return true or false
+      //     let stringifyValue = String(value);
+      //     stringifyValue = [...stringifyValue];
+      //     let storeValuePow = stringifyValue.map(
+      //       e => Number(e) ** stringifyValue.length
+      //     );
+      //     let sum = 0;
+      //     for (let element of storeValuePow) {
+      //       Number(element);
+      //       sum += element;
+      //     }
+      //     if (sum == value) {
+      //       return true;
+      //     }
+      //     return false;
+      //     // return sum;
+      //   }
+      //   let output = narcissistic(1652);
+      //   console.log(output);
+      const testScores = [
+        { name: "Alice", score: 85 },
+        { name: "Bob", score: 92 },
+        { name: "Charlie", score: 68 },
+        { name: "David", score: 55 },
+        { name: "Eve", score: 78 },
+        { name: "Frank", score: 92 },
+        { name: "Grace", score: 85 },
+      ];
+      let storeCount = testScores.reduce((marks, curr) => {
+        marks[curr] = (marks[curr] || 0) + 1;
+      }, {});
+      console.log(storeCount);
     </script>
   </body>
 </html>
