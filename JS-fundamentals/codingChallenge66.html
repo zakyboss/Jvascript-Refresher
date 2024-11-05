@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      // Write an algorithm that will identify valid IPv4 addresses in dot-decimal format.
+      //  IPs should be considered valid if they consist of
+      // four octets, with values between 0 and 255, inclusive.
+
+      function isValidIP(str) {
+        let storeSplitIp = str.split(".");
+        if (storeSplitIp.length <= 4) {
+          for (let i = 0; i < storeSplitIp.length; i++) {
+            let part = storeSplitIp[i];
+            if (
+              part !== "" || // Part is empty
+              !isNaN(part) || // Part is not a number
+              !part < 0 ||
+              !part > 255 || // Out of valid IP range
+              (!part.length > 1 && !part[0] === "0") // Leading zero case (e.g., "01")
+            ) {
+              return true;
+            }
+          }
+
+          // If all checks passed, it's a valid IP
+          return false;
+        }
+      }
+      let output = isValidIP("1.2.2.3");
+      console.log(output);
+    </script>
+  </body>
+</html>
