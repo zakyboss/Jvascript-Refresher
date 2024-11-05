@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      // Working With split method
+      let message = `Hello.you.have.an.amazing.car`;
+      console.log(message.split("."));
+      const user = `James Bond`;
+      const [firstName, lastName] = user.split(" ");
+      console.log(firstName);
+      console.log(lastName);
+      let completeName = `Mr ${firstName} ${lastName}`;
+      completeName = [...completeName];
+      console.log(completeName.join(""));
+
+      // Write a function to capitalize the first letter of each name
+      let capitalizeFirstLetter = function (name) {
+        name = name.split(" ");
+        let storOutput = [];
+        for (let i = 0; i < name.length; i++) {
+          storOutput.push(name[i][0].toUpperCase() + name[i].slice(1));
+        }
+        return storOutput.join(" ");
+      };
+      let output = capitalizeFirstLetter("jessica ann smith davis");
+      console.log(output);
+
+      /// PADDING A STRING
+      let message2 = `Go to gate 23!`;
+      let message3 = message2.padStart(25, "#");
+      console.log(message3.padEnd(33, "#"));
+
+      let hashCreditCard = function (number) {
+        number = number + "";
+        let lastDigits = number.slice(-4);
+        return lastDigits.padStart(number.length, "#");
+      };
+      let result = hashCreditCard(122425345356);
+      console.log(result);
+
+      // REPEAT
+      //  We use .repeat to repeat a string or part of a string a given number of times
+
+      const message4 = `There is bad weather all planes Canceled!`;
+      console.log(message4.repeat(4));
+
+      const planesInLine = function (n) {
+        console.log(`There are ${n} planes in line ✈`.repeat(n));
+      };
+      planesInLine(4);
+    </script>
+  </body>
+</html>
