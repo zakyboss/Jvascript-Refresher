@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <section style="margin-top: 300px; margin-left: 120px">
+      <div>
+        <input
+          type="text"
+          placeholder="Please Enter Your Names with _ "
+          style="width: 200px"
+          id="nameValue"
+        />
+        <button
+          style="
+            margin-left: 100px;
+            padding: 2px;
+            background-color: green;
+            border-radius: 20px;
+          "
+          onclick="camelCaseName()"
+        >
+          submit
+        </button>
+        <span
+          >Your names are
+          <p id="name"></p
+        ></span>
+      </div>
+    </section>
+    <script>
+      "use strict";
+      let camelCaseName = function (name) {
+        let input = document.getElementById("nameValue").value;
+        input = input.split("_");
+        let [firstValue, lastValue] = input;
+        let storeOutput =
+          firstValue + lastValue[0].toUpperCase() + lastValue.slice(1);
+        document.getElementById("name").innerHTML = storeOutput;
+        document.getElementById("name").style.backgroundColor = "green";
+      };
+      //   let output = camelCaseName();
+      //   console.log(output);
+    </script>
+  </body>
+</html>
