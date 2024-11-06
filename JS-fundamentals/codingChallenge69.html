@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      //         You are going to be given a non-empty string. Your job is to
+      //         return the middle character(s) of the string.
+
+      // If the string's length is odd, return the middle character.
+      // If the string's length is even, return the middle 2 characters.
+      function getMiddle(s) {
+        //Code goes here!
+        let storeOutput = [];
+        let mid = Math.floor(s.length / 2);
+        if (s.length % 2 == 0) {
+          storeOutput.push(s[mid - 1], s[mid]);
+        } else {
+          storeOutput.push(s[mid]);
+        }
+        return storeOutput.join("");
+      }
+      let output = getMiddle("walk");
+      console.log(output);
+    </script>
+  </body>
+</html>
