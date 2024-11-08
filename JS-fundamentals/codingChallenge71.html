@@ -34,27 +34,45 @@
       // b = [121, 14641, 20736, 36100, 25921, 361, 20736, 361]
       // comp(a,b) returns false because in b 36100 is not the square of any number of a
       function comp(array1, array2) {
-        //your code here
-        let i;
+        // Check if either array is null or their lengths don't match
+        if (!array1 || !array2 || array1.length !== array2.length) {
+          return false;
+        }
+
         let storeArr1Sq = [];
+        let storeCount = {};
+
+        // Calculate squares of elements in array1 and store them in storeArr1Sq
         for (const element of array1) {
           storeArr1Sq.push(element * element);
         }
-        if (storeArr1Sq.length !== array2.length) {
-          return false;
+
+        // Count frequency of each squared element in storeArr1Sq
+        for (let count of storeArr1Sq) {
+          if (storeCount[count]) {
+            storeCount[count]++;
+          } else {
+            storeCount[count] = 1;
+          }
         }
-        for (i = 0; i < storeArr1Sq.length; i++) {}
-        if (array2.includes(storeArr1Sq[i])) {
-          return true;
+
+        // Check each element in array2 matches in count with storeArr1Sq
+        for (let num of array2) {
+          if (!storeCount[num]) {
+            return false; // If num not in storeCount or frequency mismatches
+          }
+          storeCount[num]--; // Decrement the count for each match
         }
-        return false;
+
+        return true;
       }
 
+      // Test case
       let output = comp(
         [121, 144, 19, 161, 19, 144, 19, 11],
         [121, 14641, 20736, 361, 25921, 361, 20736, 361]
       );
-      console.log(output);
+      console.log(output); // Should log true
     </script>
   </body>
 </html>
