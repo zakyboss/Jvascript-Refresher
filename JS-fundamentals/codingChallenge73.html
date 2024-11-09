@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      //         n = 10, d = 1
+      // the k*k are 0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 100
+      // We are using the digit 1 in: 1, 16, 81, 100. The total count is then 4.
+
+      // The function, when given n = 25 and d = 1 as argument, should return 11 since
+      // the k*k that contain the digit 1 are:
+      // 1, 16, 81, 100, 121, 144, 169, 196, 361, 441.
+      // So there are 11 digits 1 for the squares of numbers between 0 and 25.
+      function nbDig(n, d) {
+        // your code
+        // n = String(n);
+        let storeNumbers = [];
+        let storeElementsOfD = [];
+        let count = 0;
+        for (let i = n; i >= 0; i--) {
+          storeNumbers.push(i * i);
+        }
+        for (let i = 0; i < storeNumbers.length; i++) {
+          n = String(n);
+          d = String(d);
+          let temp = String(storeNumbers[i]);
+          if (temp.includes(d)) {
+            storeElementsOfD.push(temp);
+          }
+          //   storeElementsOfD = storeElementsOfD.join("");
+        }
+        let storeOutput = storeElementsOfD.join("");
+        storeOutput = storeOutput.split("");
+        for (const element of storeOutput) {
+          if (element.includes(d)) {
+            count++;
+          }
+        }
+        return count;
+      }
+      let output = nbDig(10, 1);
+      console.log(output);
+    </script>
+  </body>
+</html>
