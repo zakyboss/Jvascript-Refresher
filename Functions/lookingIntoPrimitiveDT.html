@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+
+      const flight = "LH234";
+      const Zakyboss = {
+        name: "Zakariya Mohamed",
+        passport: 23243442434,
+      };
+      const checkIn = function (flightNum, passenger) {
+        flightNum = "LH99";
+        passenger.name = "Mr. " + passenger.name;
+        if (passenger.passport === 23243442434) {
+          alert("Checked in");
+        } else {
+          alert("Wrong Passport ");
+        }
+      };
+      checkIn(flight, Zakyboss);
+      console.log(flight);
+      console.log(Zakyboss);
+
+      const newPassport = function (person) {
+        person.passport = Math.trunc(Math.random() * 100000000);
+      };
+      newPassport(Zakyboss);
+      checkIn(flight, Zakyboss);
+    </script>
+  </body>
+</html>
