@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      //         Create a function named divisors/Divisors that takes an integer
+      //         n > 1 and returns an array with all of the integer's divisors(except for 1 and the number itself),
+      //         from smallest to largest. If the number is prime return the string '(integer) is prime' (null in C#,
+      //         empty table in COBOL) (use Either String a in Haskell and Result<Vec<u32>, String> in Rust).
+
+      // Examples:
+      // divisors(12) --> [2, 3, 4, 6]
+      // divisors(25) --> [5]
+      // divisors(13) --> "13 is prime"
+      function divisors(integer) {
+        let allValues = [];
+        for (let i = integer; i > 1; i--) {
+          if (i !== integer && integer % i === 0) {
+            allValues.push(i);
+          }
+        }
+        return allValues.length > 0
+          ? allValues.sort((a, b) => a - b)
+          : `${integer} is prime`;
+      }
+
+      let output = divisors(15);
+      console.log(output);
+    </script>
+  </body>
+</html>
