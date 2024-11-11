@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //         'use strict'
+      //         Implement a function that adds two numbers together and
+      //         returns their sum in binary. The conversion can be done before, or after the addition.
+
+      // The binary number returned should be a string.
+
+      // Examples:(Input1, Input2 --> Output (explanation)))
+
+      // 1, 1 --> "10" (1 + 1 = 2 in decimal or 10 in binary)
+      // 5, 9 --> "1110" (5 + 9 = 14 in decimal or 1110 in binary)
+      function addBinary(a, b) {
+        let sum = a + b;
+        let binaryForm = sum.toString(2);
+        binaryForm = String(binaryForm);
+        return binaryForm;
+      }
+      let output = addBinary(12, 12);
+      console.log(output);
+    </script>
+  </body>
+</html>

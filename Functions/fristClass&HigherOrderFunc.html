@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      // First Class Functions
+      // Functions are called First class Citizen
+      // Basically Functions are Just another 'Type' of Object
+      // Functions are Value
+      //  Since functions are values we can
+      // 1 : store them in variables
+
+      // let add = function (a,b)
+      // { return a+b }
+      // add(6,9);
+
+      // 2 : We can pass Function as arguments to another function
+      // age.addEventListene('click'add)
+
+      // 3 : we can return a whole function
+
+      // ********A higher Order Function is a function that receives aniter fuction as an argument that returns a new function or both
+      // in Our example above
+      //  The addEventListener is a higher order Function because it receives the function add as an argument
+      // age.addEventListene('click'add)
+      //  The function that is passed as an argument is a Callback function
+
+      //  Example
+      // Function 1
+      const oneWord = function (str) {
+        return str.replace(/[' ']/, "").toLowerCase();
+      };
+      const upperFirstWord = function (str) {
+        const [first, ...rest] = str.split(" ");
+        return [first.toUpperCase(), ...rest].join("");
+      };
+
+      const transformer = function (str, fn) {
+        console.log(`Original String : ${str}`);
+        console.log(`Transformed string : ${fn(str)}`);
+        console.log(`Transformed by : ${fn.name}`);
+      };
+      transformer("Javascript is awesome", oneWord);
+
+
+                // Example 2 
+      const addWheels = function (car) {
+        console.log(`wheels have been added to ${car}`);
+      };
+      const paintCar = function (car, color) {
+        console.log(`The ${car} has been painted ${color}`);
+      };
+      const buildCar = function (car, jobs) {
+        return `${jobs(car, "green")}`;
+      };
+      buildCar("Bughatti", addWheels);
+    </script>
+  </body>
+</html>
