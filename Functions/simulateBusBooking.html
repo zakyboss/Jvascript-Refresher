@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bus Booking Form</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+      }
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background-color: #f7f7f7;
+      }
+      .booking-form {
+        max-width: 400px;
+        padding: 20px;
+        border-radius: 8px;
+        background-color: #ffffff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      .booking-form h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #333;
+      }
+      .form-group {
+        margin-bottom: 15px;
+      }
+      .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        color: #555;
+      }
+      .form-group input,
+      .form-group select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 16px;
+      }
+      #submit-btn {
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        border: none;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <form class="booking-form" id="busBookingForm">
+      <h2>Bus Booking Form</h2>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Enter your name"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Enter your email"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          placeholder="Enter your phone number"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="date">Date of Travel</label>
+        <input type="date" id="date" name="date" required />
+      </div>
+      <div class="form-group">
+        <label for="bus">Select Bus</label>
+        <select id="bus" name="bus" required>
+          <option value="">Select a bus</option>
+          <option value="Express Line">Express Line</option>
+          <option value="Green Travels">Green Travels</option>
+          <option value="City Bus">City Bus</option>
+          <option value="Global Coaches">Global Coaches</option>
+        </select>
+      </div>
+      <button type="submit" id="submit-btn">Book Now</button>
+    </form>
+
+    <script>
+      const ExpressLine = {
+        busName: "Express Line",
+        bookings: [],
+        book(name, email, phoneNumber, dateOfTravel) {
+          this.bookings.push({ name, email, phoneNumber, dateOfTravel });
+          console.log(
+            `Booking confirmed: ${name} on ${this.busName} for ${dateOfTravel}`
+          );
+        },
+      };
+
+      const GreenTravels = {
+        busName: "Green Travels",
+        bookings: [],
+        book(name, email, phoneNumber, dateOfTravel) {
+          this.bookings.push({ name, email, phoneNumber, dateOfTravel });
+          console.log(
+            `Booking confirmed: ${name} on ${this.busName} for ${dateOfTravel}`
+          );
+        },
+      };
+
+      const CityBus = {
+        busName: "City Bus",
+        bookings: [],
+        book(name, email, phoneNumber, dateOfTravel) {
+          this.bookings.push({ name, email, phoneNumber, dateOfTravel });
+          console.log(
+            `Booking confirmed: ${name} on ${this.busName} for ${dateOfTravel}`
+          );
+        },
+      };
+
+      const GlobalCoaches = {
+        busName: "Global Coaches",
+        bookings: [],
+        book(name, email, phoneNumber, dateOfTravel) {
+          this.bookings.push({ name, email, phoneNumber, dateOfTravel });
+          console.log(
+            `Booking confirmed: ${name} on ${this.busName} for ${dateOfTravel}`
+          );
+        },
+      };
+
+      const buses = {
+        "Express Line": ExpressLine,
+        "Green Travels": GreenTravels,
+        "City Bus": CityBus,
+        "Global Coaches": GlobalCoaches,
+      };
+
+      document
+        .getElementById("busBookingForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          let name = document.getElementById("name").value;
+          let email = document.getElementById("email").value;
+          let phoneNumber = document.getElementById("phone").value;
+          let dateOfTravel = document.getElementById("date").value;
+          let busName = document.getElementById("bus").value;
+
+          if (busName && buses[busName]) {
+            buses[busName].book(name, email, phoneNumber, dateOfTravel);
+            console.log(buses[busName].bookings); // Log all bookings for the selected bus
+          } else {
+            console.log("Please select a valid bus.");
+          }
+        });
+      console.log(ExpressLine);
+    </script>
+  </body>
+</html>

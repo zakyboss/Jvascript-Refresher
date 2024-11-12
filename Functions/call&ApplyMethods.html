@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <button id="buy">Buy Plane</button>
+      <button>Answer Poll</button>
+    </div>
+    <script>
+      "use strict";
+      const lufthansa = {
+        airline: "Lufthansa",
+        iataCode: "LH",
+        bookings: [],
+        book(flightNum, passengerName) {
+          console.log(
+            `${passengerName} booked a seat on ${this.airline} flight ${this.iataCode} ${flightNum}`
+          );
+          this.bookings.push({
+            flight: `${this.iataCode} ${flightNum}`,
+            passengerName,
+          });
+        },
+      };
+      lufthansa.book(234, "Zakyboss");
+      lufthansa.book(364, "James");
+      const euroWings = {
+        name: "EuroWings",
+        iataCode: "EW",
+        bookings: [],
+      };
+      //   console.log(lufthansa);
+
+      const book = lufthansa.book;
+      //  Doesnt Work
+      //   book(24, "Armando Kalan ");
+      //    USING A CALL METHOD
+      book.call(euroWings, 23, "Armando William");
+      console.log(euroWings);
+      book.call(lufthansa, 566, "Marry Cooper");
+      console.log(lufthansa);
+
+      const swiss = {
+        airline: "Swiss Airlines",
+        iataCode: "LX",
+        bookings: [],
+      };
+      book.call(swiss, 100, "Juleibib Mohamed");
+      console.log(swiss);
+
+      // USING A APPLY METHOD
+      // Apply unlike call doesnt Recieve a list of arguments like this       book.call(swiss, 100, "Juleibib Mohamed");
+      // but it receives an Array of arguments
+
+      const flightData = [255, "George Cooper"];
+      book.apply(swiss, flightData);
+
+      //  You can still call book using .call but just use spread Operator
+      book.call(swiss, ...flightData);
+      console.log(swiss);
+
+      //  3 .    BIND METHOD
+      //   We can use bind so as to only use the this keyword on the object chosen
+      const bookEW = book.bind(euroWings);
+      bookEW(23, "Steven Williams");
+      console.log(euroWings);
+      const bookLH = book.bind(lufthansa);
+      const bookLX = book.bind(swiss);
+
+      // IF we want to set the other details such as flightnUMBER TO BE SPECIFIC
+      const bookEW23 = book.bind(euroWings, 23);
+      bookEW23("Zakyboss");
+      bookEW23("Martha Cooper");
+
+      console.log(euroWings);
+
+      //      Bind Used With OBjeccts and Event Listener
+      lufthansa.planes = 300;
+      lufthansa.buyPlane = function () {
+        console.log(this);
+        this.planes++;
+        console.log(this.planes);
+      };
+      document
+        .querySelector("#buy")
+        .addEventListener("click", lufthansa.buyPlane.bind(lufthansa));
+    </script>
+  </body>
+</html>

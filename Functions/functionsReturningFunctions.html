@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      //   const greet = function (greeting) {
+      //     return function (name) {
+      //       console.log(`${greeting} ${name}`);
+      //     };
+      //   };
+      //   let greeter = greet("Olas");
+      //   greeter("Jonas");
+      //   greet("Yow")("Zakyboss");
+
+      const greet = (greeting) => {
+        return (name) => {
+          return `${greeting} ${name}`;
+        };
+      };
+      let greeter = greet("Hello");
+      console.log(greeter("Henry"));
+    </script>
+  </body>
+</html>
