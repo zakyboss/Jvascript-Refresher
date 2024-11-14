@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      //         Write a function that accepts a string, and returns the same string with
+      //          all even indexed characters in each word upper cased, and all odd indexed
+      //           characters in each word lower cased. The indexing just explained is zero
+      //           based, so the zero-ith index is even, therefore that character should be upper
+      //            cased and you need to start over for each word.
+
+      // The passed in string will only consist of alphabetical characters and spaces(' ').
+      // Spaces will only be present if there are multiple words. Words will be separated by a single space(' ').
+
+      // Examples:
+      // "String" => "StRiNg"
+      // "Weird string case" => "WeIrD StRiNg CaSe"
+      function toWeirdCase(string) {
+        let words = string.split(" ");
+        let result = [];
+
+        for (let word of words) {
+          let transformedWord = "";
+          for (let i = 0; i < word.length; i++) {
+            if (i % 2 === 0) {
+              transformedWord += word[i].toUpperCase();
+            } else {
+              transformedWord += word[i].toLowerCase();
+            }
+          }
+          result.push(transformedWord);
+        }
+
+        return result.join(" ");
+      }
+      let output = toWeirdCase("string");
+      console.log(output);
+
+      //   function toWeirdCase(string) {
+      //     //TODO
+      //     string = string.split(" ");
+      //     let rest = [...string];
+      //     // firstLetter.toUpperCase();
+      //     let storeCapitalizedEven = [];
+      //     let storeAnswer = [];
+      //     for (let i = 0; i < rest.length; i++) {
+      //       if (i % 2 === 0) {
+      //         storeCapitalizedEven.push(rest[i].toUpperCase());
+      //       } else {
+      //         storeCapitalizedEven.push(rest[i]);
+      //       }
+      //     }
+      //     storeAnswer = [...storeCapitalizedEven];
+      //     return storeCapitalizedEven.join("");
+      //   }
+      //   let output = toWeirdCase("string");
+      //   console.log(output);
+    </script>
+  </body>
+</html>
