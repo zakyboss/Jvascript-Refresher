@@ -21,21 +21,20 @@
       var uniqueInOrder = function (iterable) {
         //your code here - remember iterable can be a string or an array
         iterable = iterable.toUpperCase();
-        iterable = [...iterable];
         let storeOutput = [];
-        for (let i = 0; i < iterable.length; i += 2) {
-          for (let j = i + 1; j < iterable.length; j += 2) {
-            if (iterable[i] !== iterable[j]) {
-              storeOutput.push(`${iterable[i]}`);
-              storeOutput.push(` ${iterable[j]}`);
-
-              break;
-            }
+        iterable = [...iterable];
+        let tempSet = new Set();
+        for (let i = 0; i < iterable.length; i++) {
+          tempSet.add(iterable[i]);
+          if (tempSet.size === 1) {
+            storeOutput.push(iterable[i]);
           }
-          continue;
+          tempSet.clear();
+          tempSet.add(iterable[i]);
         }
         return storeOutput;
       };
+
       let output = uniqueInOrder("AAAABBBCCDAABBB");
       console.log(output);
     </script>
