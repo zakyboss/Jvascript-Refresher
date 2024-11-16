@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      const runOnce = function () {
+        console.log(`This will never run again`);
+      };
+      // runOnce();
+      (function (a, b) {
+        console.log(`This will run once`);
+      })();
+      (() => console.log(`This will also not run again`))();
+    </script>
+  </body>
+</html>
