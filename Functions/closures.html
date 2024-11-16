@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      //  A closure is the closed Over variable environment of the execution context in which a function was created
+      //   even after that execution context is gone
+      //   or
+      // A closure gives a function access to all the varuables of its parent function even after that parent function has returned
+      // .The function keeps a refference to its outer scoper which preserves the scope chain throughout time
+
+      const secureBooking = function () {
+        let passengerCount = 0;
+        return function () {
+          passengerCount++;
+          console.log(`${passengerCount} passenger`);
+        };
+      };
+      const booker = secureBooking();
+      booker();
+      booker();
+      booker();
+      console.dir(secureBooking);
+    </script>
+  </body>
+</html>
