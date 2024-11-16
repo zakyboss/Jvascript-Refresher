@@ -66,6 +66,32 @@
       //     ["cccooommaaqqoxii", "gggqaffhhh", "tttoowwwmmww"]
       //   );
       //   console.log(output);
+
+      function mxdiflg(a1, a2) {
+        let maxA1 = Math.max(...a1.map(str => str.length));
+        let minA1 = Math.min(...a1.map(str => str.length));
+        let maxA2 = Math.max(...a2.map(str => str.length));
+        let minA2 = Math.min(...a2.map(str => str.length));
+        let result = maxA1 - minA2;
+        let result2 = maxA2 - minA1;
+        return Math.max(result, result2);
+      }
+      let output = mxdiflg(
+        [
+          "hoqq",
+          "bbllkw",
+          "oox",
+          "ejjuyyy",
+          "plmiis",
+          "xxxzgpsssa",
+          "xxwwkktt",
+          "znnnnfqknaz",
+          "qqquuhii",
+          "dvvvwz",
+        ],
+        ["cccooommaaqqoxii", "gggqaffhhh", "tttoowwwmmww"]
+      );
+      console.log(output);
     </script>
   </body>
 </html>
