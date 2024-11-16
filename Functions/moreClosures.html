@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      //   example 1
+      let f;
+      let g = function () {
+        const a = 23;
+        f = function () {
+          console.log(a * 2);
+        };
+      };
+      const h = function () {
+        const b = 777;
+        f = function () {
+          console.log(b * 2);
+        };
+      };
+      //   console.log(f);
+      g();
+      f();
+      //    RE-assigning f function
+      h();
+      f();
+
+      // Example2
+      const boardPassengers = function (no, wait) {
+        const perGroup = no / 3;
+        console.log(`Now we are boarding the ${no} passengers`);
+        console.log(`There are 3 groups each with ${perGroup} passengers`);
+        setTimeout(function () {}, 1000);
+        console.log(`Will start boarding in ${wait} seconds`);
+      };
+      boardPassengers(100, 30);
+    </script>
+  </body>
+</html>
