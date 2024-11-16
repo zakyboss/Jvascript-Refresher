@@ -47,6 +47,20 @@
         [78, 9],
       ]);
       console.log(output);
+      let flight = "LH231";
+      let passenger = {
+        name: "Zakyboss",
+        email: "Boochimo9@gmail.com",
+        passportNum: 123,
+      };
+      const checkIn = function (flightNum, passenger) {
+        flightNum = "LZ1234";
+        flight = flightNum;
+        passenger.name = "Mr" + passenger.name;
+      };
+      checkIn(flight, passenger);
+      console.log(flight);
+      console.log(passenger);
     </script>
   </body>
 </html>
