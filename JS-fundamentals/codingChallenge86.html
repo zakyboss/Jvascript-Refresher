@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      //         An Arithmetic Progression is defined as one in which there is a constant difference between
+      //          the consecutive terms of a given series of numbers. You are provided with consecutive elements
+      //           of an Arithmetic Progression. There is however one hitch: exactly one term from the original series
+      //           is missing from the set of numbers which have been given to you. The rest of the given series is the
+      //            same as the original AP. Find the missing term.
+
+      // You have to write a function that receives a list, list size will always be at least 3 numbers.
+      // The missing term will never be the first or last one.
+
+      // Example
+      // findMissing([1, 3, 5, 9, 11]) == 7
+      var findMissing = function (list) {
+        let storeDifference = 0;
+        let difference1 = list[1] - list[0];
+        let difference2 = list[list.length - 1] - list[list.length - 2];
+        if (list.length === 3) {
+          storeDifference = Math.min(difference1, difference2);
+        }
+        if (list[1] < 0) {
+          storeDifference = Math.max(difference1, difference2);
+        }
+        if (difference1 === difference2) {
+          storeDifference = difference1;
+        }
+        let twoValuesInBtn = [];
+        list = list.sort((a, b) => a - b);
+        for (let i = 1; i < list.length; i++) {
+          //   i = 1;
+          if (list[i] - list[i - 1] !== storeDifference) {
+            twoValuesInBtn.push(list[i - 1]);
+            twoValuesInBtn.push(list[i]);
+          }
+        }
+        let [smallerValue, largerValue] = twoValuesInBtn;
+
+        return largerValue - storeDifference;
+      };
+      let Output = findMissing([1, 3, 4]);
+      console.log(Output);
+    </script>
+  </body>
+</html>
