@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <section>
+      <div style="width: 100px; height: 100px" class="box">
+        <button style="padding: 5px" onclick="changeColor()">Click me</button>
+      </div>
+    </section>
+    <script>
+      let changeColor = function () {
+        let box = document.querySelector(".box");
+        let colors = ["Green", "black", "", "Yellow", "Pink", "purple"];
+        let i;
+        for (let color of colors) {
+          let random = Math.floor(Math.random() * colors.length);
+          i = random;
+          box.style.backgroundColor = colors[i];
+        }
+      };
+      box.style.backgroundColor = backgColor;
+    </script>
+  </body>
+</html>
