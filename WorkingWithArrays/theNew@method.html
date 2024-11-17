@@ -1,13 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-        'use strict'
+      "use strict";
+      const arr = [23, 12, 34];
+      console.log(arr[0]);
+      console.log(arr.at(0));
+
+      //   Suppose we wanted to get last value
+      // console.log(arr[arr.length-1])
+      console.log(arr.slice(-1)[0]);
+
+      //    using at
+      console.log(arr.at(-1));
+
+      //    example
+      // You want to capitalize the first and last letter of a stirng
+      let string = "zakyboss";
+      let middleValues = string.slice(1, -1);
+      let last = string.at(-1).toUpperCase();
+      let first = string.at(0).toUpperCase();
+      let output = [...first, middleValues, last];
+      console.log(output.join(""));
+      //   console.log(string);
     </script>
-</body>
+  </body>
 </html>
