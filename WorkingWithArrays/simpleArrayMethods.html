@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      let arr = ["a", "b", "c", "d", "e"];
+
+      //SLICE
+      //   let slicedArray = arr.slice(2);
+      //   console.log(slicedArray);
+      //   let slicedArray = arr.slice(2, 4);
+      //   console.log(slicedArray);
+      //
+      //   let slicedArray = arr.slice(1, -1);
+      //   console.log(slicedArray);
+
+      //   // create Shallow copy we can just use slice methods to get shallow copy
+
+      // 2. SPLICE
+      // NOTE  ****IT MUTATES THE ORIGINAL💀 **********
+
+      //   let splicedArray = arr.splice(-1);
+      //   console.log(splicedArray);
+      //   //   let slicedArray = arr.slice(2);
+      //   console.log(arr);
+
+      //  To use splice we generally use it to get the last or first index
+      // example
+      //   let arr2 = ["Mango", "Banana", "Fish", "avocado"];
+      //   let lastValue = arr2.splice(-1);
+      //   console.log(lastValue);
+
+      //  How we use splice
+      let arr2 = ["Mango", "Banana", "Fish", "avocado"];
+      let spliceUsage = arr2.splice(1, 3);
+      // basically the first number is where we start and the other number is how many elements
+      // we want deleted
+      console.log(spliceUsage);
+
+      // 3.  REVERSE
+      //    REVERSE IS USED TO REVERSE AN ARRAY OR STRING
+      // NOTE  ****IT MUTATES THE ORIGINAL💀 **********
+      let arr3 = ["e", "d", "c", "b", "a"];
+      console.log(arr3.reverse());
+      console.log(arr3);
+
+      // 4 . CONCAT
+      //   let example1 = [1, 2, 3, 4, 5];
+      //   let example2 = [6, 7, 8, 9, 10];
+      //   //   const numbers = example1.concat(example2);
+      //   const numbers = [...example1, ...example2];
+      //   console.log(numbers);
+
+      // 5. JOIN
+      let example1 = [1, 2, 3, 4, 5];
+      let example2 = [6, 7, 8, 9, 10];
+      //   const numbers = example1.concat(example2);
+      const numbers = [...example1, ...example2];
+      console.log(numbers.join("-"));
+    </script>
+  </body>
+</html>
