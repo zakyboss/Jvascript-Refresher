@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      //         You will be given an array and a limit value. You must check that all values
+      //         in the array are below or equal to the limit value. If they are, return true. Else, return false.
+
+      // You can assume all values in the array are numbers.
+      function smallEnough(a, limit) {
+        for (let i = 0; i < a.length; i++) {
+          if (a[i] > limit) {
+            return false;
+          }
+        }
+        return true;
+      }
+      let output = smallEnough([78, 90, 85, 99, 92, 11, 10, 11], 100);
+      console.log(output);
+    </script>
+  </body>
+</html>
