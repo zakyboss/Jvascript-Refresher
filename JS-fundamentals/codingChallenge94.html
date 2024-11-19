@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      //         Given a sequence of numbers, find the largest pair sum in the sequence.
+
+      // For example
+
+      // [10, 14, 2, 23, 19] -->  42 (= 23 + 19)
+      // [99, 2, 2, 23, 19]  --> 122 (= 99 + 23)
+      // Input sequence contains minimum two elements and every element is an integer.
+
+      function largestPairSum(numbers) {
+        //TODO: Write your Code here
+        let copyOfNumbers = [...numbers];
+        let storeSortedCopy = copyOfNumbers.sort((a, b) => b - a);
+        return storeSortedCopy[0] + storeSortedCopy[1];
+      }
+      let output = largestPairSum([10, 14, 2, 23, 19]);
+      console.log(output);
+    </script>
+  </body>
+</html>
