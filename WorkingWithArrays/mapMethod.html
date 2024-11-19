@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+      let euroToUsd = 1.1;
+      let Euros = movements.map((mov) => {
+        return mov * euroToUsd;
+      });
+      // console.log(first)
+      console.log(Euros);
+      let movementsUSDfor = [];
+      for (const mov of movements) movementsUSDfor.push(mov * euroToUsd);
+      //   console.log(movementsUSDfor);
+    </script>
+  </body>
+</html>
