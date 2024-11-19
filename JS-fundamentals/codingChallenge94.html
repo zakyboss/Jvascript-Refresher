@@ -24,6 +24,13 @@
       }
       let output = largestPairSum([10, 14, 2, 23, 19]);
       console.log(output);
+      let multiplyByIndex = function (numbers) {
+        let storeAnswer = numbers.map((number, index) => {
+          return number * index;
+        });
+        return storeAnswer;
+      };
+      console.log(multiplyByIndex([1, 6, 7, 8]));
     </script>
   </body>
 </html>
