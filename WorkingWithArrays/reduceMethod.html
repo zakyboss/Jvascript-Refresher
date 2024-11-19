@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+      // Accumulator is like a snowball
+      let balance = movements.reduce(
+        function (accumulator, current, index, array) {
+          console.log(`${index}: ${accumulator}`);
+          return accumulator + current;
+        },
+        0 // The zero is the number where you want to start adding from
+      );
+      console.log(balance);
+      for (const [i, value] of movements) {
+        let sum = 0;
+        sum += value;
+        return `${i} : ${value}`;
+      }
+      
+    </script>
+  </body>
+</html>
