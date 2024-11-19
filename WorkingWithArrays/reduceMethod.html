@@ -12,18 +12,26 @@
       // Accumulator is like a snowball
       let balance = movements.reduce(
         function (accumulator, current, index, array) {
-          console.log(`${index}: ${accumulator}`);
+          //   console.log(`${index}: ${accumulator}`);
           return accumulator + current;
         },
         0 // The zero is the number where you want to start adding from
       );
-      console.log(balance);
-      for (const [i, value] of movements) {
-        let sum = 0;
-        sum += value;
-        return `${i} : ${value}`;
-      }
-      
+      //   console.log(balance);
+      //   for (const [i, value] of movements) {
+      //     let sum = 0;
+      //     sum += value;
+      //     return `${i} : ${value}`;
+      //   }
+      // Getting maximum value in the array
+      let max = movements.reduce((accumulator, current) => {
+        if (accumulator > current) {
+          return accumulator;
+        } else {
+          return current;
+        }
+      }, movements[0]);
+      console.log(max);
     </script>
   </body>
 </html>
