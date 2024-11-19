@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //     'use strict'
+      //     Your task is to remove all duplicate words from a string, leaving only single (first) words entries.
+
+      // Example:
+
+      // Input:
+
+      // 'alpha beta beta gamma gamma gamma delta alpha beta beta gamma gamma gamma delta'
+
+      // Output:
+
+      // 'alpha beta gamma delta'
+      function removeDuplicateWords(s) {
+        // your perfect code...
+        let breakUpS = s.split(" ");
+        let storeAnswer = new Set(breakUpS);
+        storeAnswer = [...storeAnswer];
+        return storeAnswer.join(" ");
+      }
+      let output = removeDuplicateWords(
+        "alpha beta beta gamma gamma gamma delta alpha beta beta gamma gamma gamma delta"
+      );
+      console.log(output);
+    </script>
+  </body>
+</html>
