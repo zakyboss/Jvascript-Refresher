@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      let areAnagrams = function (word1, word2) {
+        let storeWord1 = {};
+        let storeWord2 = {};
+        word1 = word1.split("");
+        word2 = word2.split("");
+
+        for (let letter of word1) {
+          if (storeWord1[letter]) {
+            storeWord1[letter] += 1;
+          } else {
+            storeWord1[letter] = 1;
+          }
+        }
+        for (let letter of word2) {
+          if (storeWord2[letter]) {
+            storeWord2[letter] += 1;
+          } else {
+            storeWord2[letter] = 1;
+          }
+        }
+        for (let letter in storeWord1) {
+          if (storeWord1[letter] !== storeWord2[letter]) {
+            return false;
+          }
+        }
+
+        return true; // Return true if all letters match
+      };
+      let output = areAnagrams("hello", "snake");
+      console.log(output);
+    </script>
+  </body>
+</html>

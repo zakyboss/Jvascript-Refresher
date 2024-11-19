@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      let euroToUsd = 1.1;
+
+      const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+      let totalDepositsUSD = movements
+        .filter((mov) => mov > 0)
+        .map((mov) => mov * euroToUsd)
+        .reduce((accumulator, current) => accumulator + current);
+      console.log(totalDepositsUSD);
+    </script>
+  </body>
+</html>
