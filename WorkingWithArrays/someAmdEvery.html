@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+      //   includes Method returns a boolean as either true or false by carrying out a comparison
+      // so if we wanted to check it based on argument we cant
+
+      //         *********SOME*******
+      // maybe we wanted to know if there was a movement into the account
+      const anyDeposits = movements.some((mov) => mov > 200);
+      console.log(anyDeposits);
+      // console.log(movements.includes(200));
+
+      // ***********EVERY**********
+      // Only works when all the conditions are true
+      let example = [1, 223, 435];
+      let storeEvery = example.every((mov) => mov > 0);
+      console.log(storeEvery);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      //         You are given an odd-length array of integers, in which all of them are the same, except for one single number.
+
+      // Complete the method which accepts such an array, and returns that single different number.
+
+      // The input array will always be valid! (odd-length >= 3)
+      function stray(numbers) {
+        let storeCount = {};
+        for (let number of numbers) {
+          number = Number(number); // Ensure the number is a valid number
+          if (storeCount[number]) {
+            storeCount[number] += 1;
+          } else {
+            storeCount[number] = 1; // Initialize the count to 1 if the number is not already in the object
+          }
+        }
+        for (let number in storeCount) {
+          if (number < 2) {
+            continue;
+          } else {
+            return Number(number);
+          }
+        }
+      }
+      let output = stray([2, 1, 1]);
+      console.log(output);
+    </script>
+  </body>
+</html>
