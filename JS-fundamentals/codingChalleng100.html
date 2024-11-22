@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      //         The main idea is to count all the occurring characters in a string.
+      //          If you have a string like aba, then the result should be {'a': 2, 'b': 1}.
+
+      // What if the string is empty? Then the result should be empty object literal, {}.
+      function count(string) {
+        // TODO
+        let storeCount = {};
+        for (let char of string) {
+          if (storeCount[char]) {
+            storeCount[char]++;
+          } else {
+            storeCount[char] = 1;
+          }
+        }
+        if (string.length < 1) {
+          return {};
+        } else {
+          return storeCount;
+        }
+      }
+      let output = count("aba");
+      console.log(output);
+    </script>
+  </body>
+</html>
