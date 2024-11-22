@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      //         Create a parser to interpret and execute the Deadfish language.
+
+      // Deadfish operates on a single value in memory, which is initially set to 0.
+
+      // It uses four single-character commands:
+
+      // i: Increment the value
+      // d: Decrement the value
+      // s: Square the value
+      // o: Output the value to a result array
+      // All other instructions are no-ops and have no effect.
+
+      // Examples
+      // Program "iiisdoso" should return numbers [8, 64].
+      // Program "iiisdosodddddiso" should return numbers [8, 64, 3600].
+      function parse(data) {
+        let counter = 0;
+
+        let storeOutput = [];
+        let storeInstructions = ["i", "s", "d", "o"];
+        for (let i = 0; i < data.length; i++) {
+          if (data[i] === "i") {
+            counter = counter + 1; // Increment
+          } else if (data[i] === "s") {
+            counter = counter * counter; // Square
+          } else if (data[i] === "d") {
+            counter = counter - 1; // Decrement
+          } else if (data[i] === "o") {
+            storeOutput.push(counter); // Output current counter
+          }
+          // Ignore invalid characters
+        }
+        return storeOutput;
+        t;
+      }
+      let output = parse("iiisxxxdoso");
+      console.log(output);
+    </script>
+  </body>
+</html>
