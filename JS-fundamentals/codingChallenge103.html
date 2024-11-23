@@ -1,11 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      //         Find the missing letter
+      // Write a method that takes an array of consecutive (increasing) letters as input and that returns the missing letter in the array.
+
+      // You will always get an valid array. And it will be always exactly one letter be missing. The length of the array will always be at least 2.
+      // The array will always contain letters in only one case.
+
+      // Example:
+
+      // ['a','b','c','d','f'] -> 'e'
+      // ['O','Q','R','S'] -> 'P'
+      // (Use the English alphabet with 26 letters!)
+
+      // Have fun coding it and please don't forget to vote and rank this kata! :-)
+
+      // I have also created other katas. Take a look if you enjoyed this kata!
+      function findMissingLetter(array) {
+        let storeAnswer = [];
+        let copy = [...array];
+        copy = String(copy);
+        copy = copy.toLowerCase().split(",");
+        copy = [...copy];
+        let firstLetter = copy[0];
+        let lastLetter = copy[copy.length - 1];
+        let alphabet = "abcdefghijklmnopqrstuvwxyz";
+        alphabet = alphabet.split("");
+        let getIndexOfFirstLetter = alphabet.indexOf(firstLetter);
+        let getIndexOfLastLetter = alphabet.indexOf(lastLetter);
+        let cutSectionAlphabet = alphabet.slice(
+          getIndexOfFirstLetter,
+          getIndexOfLastLetter + 1
+        );
+        if (copy.length < 1 || copy.length < 2) {
+          return " ";
+        }
+        for (let i = 0; i < cutSectionAlphabet.length; i++) {
+          if (!copy.includes(cutSectionAlphabet[i])) {
+            storeAnswer.push(cutSectionAlphabet[i]);
+          }
+        }
+        if (array[0][0] === array[0][0].toUpperCase()) {
+          return storeAnswer.join("").toUpperCase();
+        } else {
+          return storeAnswer.join("").toLowerCase();
+        }
+      }
+      let output = findMissingLetter([["o", "p", "q", "s"]]);
+      console.log(output);
+    </script>
+  </body>
 </html>
