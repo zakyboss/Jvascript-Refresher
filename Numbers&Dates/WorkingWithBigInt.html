@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-        'use strict';
-         // Numbers in JS are in base 2 and only utililize 57 bits so 
-         // Max in JS is 2**53-1
+      "use strict";
+      // Numbers in JS are in base 2 and only utililize 57 bits so
+      // Max in JS is 2**53-1
 
-         We create Big int by 
+      //  We create Big int by
+      //  BigInt()  or 37676726736 then n
+      console.log(2364645633842378n);
+
+      // OPERATIONS
+      let huge = 213424923949233294n;
+      let num = 23;
+      // NOTE YOU CANT MIX NORMAL NUMBER AND BIG INT
+      console.log(huge + BigInt(num));
     </script>
-</body>
+  </body>
 </html>
