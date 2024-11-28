@@ -23,21 +23,21 @@
       // titleCase('the quick brown fox') // should return: 'The Quick Brown Fox'
       "use strict";
       function titleCase(title, minorWords) {
-        let storeAnswer = [];
-        let copyOfTitle = title.split(" ");
-        copyOfTitle = [...copyOfTitle];
-        let copyOfMinorWords = minorWords.split(" ");
-        copyOfMinorWords = [...copyOfMinorWords];
-        for (let i = 0; i < copyOfTitle.length; i++) {
-          if (copyOfMinorWords.includes(copyOfTitle[i]) && i == 0) {
-            storeAnswer.push(
-              `${copyOfTitle[i][0].toUpperCase()} ${copyOfTitle.slice(1)}`
-            );
+        const copy = title.toLowerCase().split(" ");
+        let storeTransformedForm1 = [];
+        let storeMinor = minorWords.toLowerCase().split(" ");
+        for (let i = 0; i < copy.length; i++) {
+          if (storeMinor.includes(copy[i] && i !== 0)) {
+            let firstLetter = copy[i][0].toLowerCase();
+            let restOfLetters = copy[i].slice(1);
+            storeTransformedForm1.push(firstLetter + restOfLetters);
           } else {
-            storeAnswer.push(`${copyOfTitle[i].toLowerCase()}`);
+            let firstLetter = copy[i][0].toUpperCase();
+            let restOfLetters = copy[i].slice(1);
+            storeTransformedForm1.push(firstLetter + restOfLetters);
           }
         }
-        return storeAnswer;
+        return storeTransformedForm1;
       }
 
       let output = titleCase("THE WIND IN THE WILLOWS", "The In");
