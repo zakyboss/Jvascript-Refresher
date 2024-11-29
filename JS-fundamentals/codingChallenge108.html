@@ -15,19 +15,31 @@
       //     99 18
       // <!-- -32  5  -->
       "use strict";
+      //   function sumDigits(number) {
+      //     number = Math.abs(number);
+      //     while (number > 9) {
+      //       let sum = 0;
+      //       let stringDigits = String(number);
+      //       for (let i = 0; i < stringDigits.length; i++) {
+      //         sum += Number(stringDigits[i]);
+      //       }
+      //       number = sum;
+      //     }
+      //     return number;
+      //   }
+      //   let output = sumDigits(9 - 239);
+      //   console.log(output);
       function sumDigits(number) {
         number = Math.abs(number);
-        while (number > 9) {
-          let sum = 0;
-          let stringDigits = String(number);
-          for (let i = 0; i < stringDigits.length; i++) {
-            sum += Number(stringDigits[i]);
-          }
+        let sum = 0;
+        let stringDigits = String(number);
+        for (let i = 0; i < stringDigits.length; i++) {
+          sum += Number(stringDigits[i]);
           number = sum;
         }
         return number;
       }
-      let output = sumDigits(9 - 239);
+      let output = sumDigits(99);
       console.log(output);
     </script>
   </body>
