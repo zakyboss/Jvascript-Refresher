@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      //         You are given an object representing students and their scores across different subjects. Your task is to:
+
+      // Calculate the average score for each student.
+      // Calculate the total score for all students combined.
+      // Return an object with each student's name as the key and their average score as the value.
+      // Also include a key "totalScore" in the result object with the
+      let solution = function () {
+        let sum = 0;
+        let storeAllMarks = [];
+        const studentScores = {
+          Alice: { Math: 85, English: 92, Science: 78 },
+          Bob: { Math: 89, English: 76, Science: 91 },
+          Charlie: { Math: 82, English: 90, Science: 88 },
+        };
+        for (let student in studentScores) {
+          let allDetails = Object.entries(studentScores[student]);
+          for (let [name, mark] of allDetails) {
+            sum += mark;
+          }
+          //  Print total marks for Each Student
+          console.log(`${student} has ${sum} marks in total`);
+          storeAllMarks.push(sum);
+          // Return an object with each student's name as the key and their average score as the value.
+          // Also include a key "totalScore" in the result object with the
+          studentScores[student] = sum;
+          // All marks for all summed
+          let sumAllMarks = storeAllMarks.reduce((acc, curr) => acc + curr, 0);
+          studentScores.totalScore = sumAllMarks;
+
+          
+        }
+        return studentScores;
+      };
+      let output = solution();
+      console.log(output);
+    </script>
+  </body>
+</html>
