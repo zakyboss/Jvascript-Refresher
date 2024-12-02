@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      //     Your task, is to create N×N multiplication table, of size provided in parameter.
+
+      // For example, when given size is 3:
+
+      // 1 2 3
+      // 2 4 6
+      // 3 6 9
+
+      let multiplicationTable = function (size) {
+        // insert code here
+        let multiples;
+        let answer = [];
+        let storeAnswer = [];
+        for (let i = 1; i <= size; i++) {
+          let number = 1;
+          storeAnswer.push(number * i);
+          for (let j = 1; j < size; j++) {
+            number++;
+            storeAnswer.push(number * i);
+          }
+          let value = storeAnswer.slice(0, 3);
+          answer.push(value);
+          storeAnswer.splice(0, 3);
+        }
+
+        return answer;
+      };
+      let output = multiplicationTable(2);
+      console.log(output);
+    </script>
+  </body>
+</html>
