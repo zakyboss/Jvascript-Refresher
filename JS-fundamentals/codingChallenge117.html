@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      // Description:
+      // Encrypt this!
+
+      // You want to create secret messages which can be deciphered by the Decipher this! kata. Here are the conditions:
+
+      // Your message is a string containing space separated words.
+      // You need to encrypt each word in the message using the following rules:
+      // The first letter must be converted to its ASCII code.
+      // The second letter must be switched with the last letter
+      // Keepin' it simple: There are no special characters in the input.
+      // Examples:
+      // encryptThis("Hello") === "72olle"
+      // encryptThis("good") === "103doo"
+      // encryptThis("hello world") === "104olle 119drlo"
+
+      var encryptThis = function (text) {
+        // Implement me! :)
+        let storeAnswer = [];
+        if (text.length < 2) {
+          storeAnswer.push(text.charCodeAt());
+          return storeAnswer.join("");
+        } else {
+          let allWords = text.split(" ");
+          for (let i = 0; i < allWords.length; i++) {
+            let [firstLetter, secondLetter, ...rest] = allWords[i];
+            let lastLetter = allWords[i][allWords[i].length - 1];
+            let valueOfFirstLetter = allWords[i].charCodeAt(firstLetter);
+            rest.pop();
+            storeAnswer.push(
+              `${valueOfFirstLetter}${lastLetter}${rest.join(
+                ""
+              )}${secondLetter}`
+            );
+          }
+        }
+        return storeAnswer;
+      };
+      let output = encryptThis("A wise old owl lived in an oak");
+      console.log(output);
+    </script>
+  </body>
+</html>
