@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      //         Question: "The Weight of Words"
+      // In this challenge, you need to calculate the "weight" of a
+      // word based on the sum of its characters' positions in the alphabet. For example:
+
+      // a = 1, b = 2, ..., z = 26.
+      // For a word like "abc", the weight is 1 + 2 + 3 = 6.
+      // Task:
+      // Write a function heaviestWord(sentence) that:
+
+      // Accepts a string containing multiple words separated by spaces.
+      // Calculates the weight of each word.
+      // Returns the word with the highest weight. If two words have the same weight,
+      //  return the one that appears first in the sentence.
+      //  example
+      // heaviestWord("hello world") // "world" (h+e+l+l+o = 8+5+12+12+15 = 52, w+o+r+l+d = 23+15+18+12+4 = 72)
+      // heaviestWord("a b c")       // "c" (a=1, b=2, c=3)
+      // heaviestWord("aaa bb ccc")  // "ccc" (aaa=3, bb=4, ccc=9
+      let heaviestWord = function (word) {
+        let alphabet = "abcdefghijklmnopqrstuvwxyz";
+        alphabet = alphabet.split("");
+        word = word.split(" ");
+        let storeLetterWeight = [];
+        for (let i = 0; i < word.length; i++) {
+          let countWeight = 0;
+          if (word[i].length < 2) {
+            storeLetterWeight.push(alphabet.indexOf(word[i]) + 1);
+          } else {
+            let splitWord = word[i].split("");
+            for (let letter of splitWord) {
+              countWeight += alphabet.indexOf(letter) + 1;
+            }
+
+            storeLetterWeight.push(countWeight);
+          }
+        }
+        let maxWeight = Math.max(...storeLetterWeight);
+        let indexOfMaxWeight = storeLetterWeight.indexOf(maxWeight);
+        return word[indexOfMaxWeight];
+      };
+      let output = heaviestWord("aaa bb ccc");
+      console.log(output);
+    </script>
+  </body>
+</html>
