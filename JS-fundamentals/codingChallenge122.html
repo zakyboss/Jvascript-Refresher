@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      //         Complete the method which accepts an array of integers, and returns one of the following:
+
+      // "yes, ascending" - if the numbers in the array are sorted in an ascending order
+      // "yes, descending" - if the numbers in the array are sorted in a descending order
+      // "no" - otherwise
+      function isSortedAndHow(array) {
+        let copy1 = [...array];
+        let copy2 = [...array];
+        let ascending = copy1.sort((a, b) => a - b);
+        let descending = copy2.sort((a, b) => b - a);
+        if (array.join("") === ascending.join("")) {
+          return "yes, ascending";
+        } else if (array.join("") === descending.join("")) {
+          return "yes, descending";
+        } else {
+          return "no";
+        }
+      }
+      let output = isSortedAndHow([2, 1]);
+      console.log(output);
+    </script>
+  </body>
+</html>
