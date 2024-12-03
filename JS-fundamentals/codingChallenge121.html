@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      //         Write a function findOdd(arr) that takes an array of integers and returns the integer
+      //          that appears an odd number of times.
+
+      // There will always be only one integer that appears an odd number of times.
+      let findOdd = function (numbers) {
+        let keepCount = {};
+        for (let number of numbers) {
+          if (keepCount[number]) {
+            keepCount[number] += 1;
+          } else {
+            keepCount[number] = 1;
+          }
+          if (keepCount[number] % 2 !== 0) {
+            return number;
+          }
+        }
+      };
+      let output = findOdd([0, 1, 0, 1, 0]);
+      console.log(output);
+    </script>
+  </body>
+</html>
