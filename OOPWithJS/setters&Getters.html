@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      //   const account = {
+      //     owner: "Jonas",
+      //     movement: [120, 232, 356, 646],
+
+      //     // getting latest movement ;
+      //     get latest() {
+      //       return this.movement.slice(-1).pop();
+      //     },
+      //     set latest(mov) {
+      //       this.movement.push(mov);
+      //     },
+      //   };
+      //   account.latest = 50;
+      //   console.log(account.movement);
+      //   console.log(account.latest);
+
+      class Person {
+        constructor(fullName, age, monthlySalaries) {
+          this.fullName = fullName;
+          this.age = age;
+          this.monthlySalaries = [120000, 213000, 23444];
+        }
+        get getAge() {
+          if (this.age < 18) return console.log("You are too young");
+          else return console.log("You are grown up");
+        }
+        get lastMonthSalary() {
+          return this.monthlySalaries[(this.monthlySalaries.length - 1)];
+        }
+        set fullName(name) {
+          if (name.includes(" ")) this._fullName = name;
+          else alert("That is one name you entered there");
+        }
+      }
+      let zakyboss = new Person("Zakyboss J", 22);
+      console.log(zakyboss.lastMonthSalary);
+    </script>
+  </body>
+</html>

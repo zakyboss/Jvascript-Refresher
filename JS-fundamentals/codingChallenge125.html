@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var morseRef = {
+        ".-": "A",
+        "-...": "B",
+        "-.-.": "C",
+        "-..": "D",
+        ".": "E",
+        "..-.": "F",
+        "--.": "G",
+        "....": "H",
+        "..": "I",
+        ".---": "J",
+        "-.-": "K",
+        ".-..": "L",
+        "--": "M",
+        "-.": "N",
+        "---": "O",
+        ".--.": "P",
+        "--.-": "Q",
+        ".-.": "R",
+        "...": "S",
+        "-": "T",
+        "..-": "U",
+        "...-": "V",
+        ".--": "W",
+        "-..-": "X",
+        "-.--": "Y",
+        "--..": "Z",
+        ".----": "1",
+        "..---": "2",
+        "...--": "3",
+        "....-": "4",
+        ".....": "5",
+        "-....": "6",
+        "--...": "7",
+        "---..": "8",
+        "----.": "9",
+        "-----": "0",
+        "/": " ",
+        "--..--": ",",
+        "..--..": "?",
+        "-.-.-.": ";",
+        "---...": ":",
+        "-....-": "-",
+        "-..-.": "/",
+        ".----.": "'",
+        "-.-.--": "!",
+      };
+
+      function decodeMorse(morseCode) {
+        return morseCode
+          .trim()
+          .split("   ") // Split by three spaces to separate words
+          .map(
+            word =>
+              word
+                .split(" ") // Split each word into individual Morse characters
+                .map(code => morseRef[code])
+                .join("") // Join decoded characters into a word
+          )
+          .join(" "); // Join decoded words with a single space
+      }
+
+      let output = decodeMorse(".... . -.--   .--- ..- -.. .");
+      console.log(output); // Outputs "HEY JUDE"
+    </script>
+  </body>
+</html>

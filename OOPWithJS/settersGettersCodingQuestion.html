@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+
+      // Alright, here’s your challenge. Solve it! 😏
+
+      // Problem:
+      // Write a BankAccount class in JavaScript with the following requirements:
+
+      // A constructor that accepts accountHolderName (string) and initialBalance (number).
+      // A getter called balance that returns the current balance.
+      // A setter called balance that allows depositing money (but not withdrawing).
+      // If a negative value is passed, log an error: "Cannot deposit a negative amount."
+      // A getter called accountHolder that returns the accountHolderName.
+
+      class BankAccount {
+        constructor(accountHolderName, initialBal) {
+          this.accountHolderName = accountHolderName;
+          this.initialBal = initialBal;
+        }
+        get balance() {
+          return this.initialBal;
+        }
+        set balance(deposit) {
+          if (deposit < 0) console.log("cannot deposit a negative amount");
+          else this._balance = this.initialBal += deposit;
+        }
+        get accountHolder() {
+          return this.accountHolderName;
+        }
+      }
+      let exampleUser = new BankAccount("Zakyboss", 2000);
+      exampleUser.balance = 300;
+      console.log(exampleUser.balance);
+    </script>
+  </body>
+</html>
