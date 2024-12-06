@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      // Creating a Constructor Function
+      // Constructor functions sould Start with Capital letter
+      const Person = function (firstName, birthYear) {
+        //    We take the this keyword and set it to the property we want to create
+        this.firstName = firstName;
+        this.birthYear = birthYear;
+
+        // Never create a funcion inside the constructor
+      };
+      //You call constructor function by using ******NEW**********
+
+      const zak = new Person("Zakyboss", 2002);
+      //   console.log(zak);
+      // What happens when you call it
+      // 1.    A new empty object is created
+      // 2. A fucntion is called and this keyword will point to the newly created  object
+      // 3. The newly created object is linked to prototype
+      // 4. The constructor function returns the empty object created at the beginning
+
+      const matilda = new Person("Matilda", 2003);
+      const jack = new Person("Jack", 2004);
+      console.log(jack);
+      // To Know if an object is an instance of another you use instance of
+      console.log(zak instanceof Person);
+
+      //    Prototypes
+      Person.prototype.calcAge = function () {
+        console.log(2037 - this.birthYear);
+      };
+      jack.calcAge();
+
+      // To Know the prototype of Objects we can use __proto__
+      console.log(zak.__proto__ == Person.prototype);
+
+      console.log(Person.prototype.isPrototypeOf(jack)); // True
+      console.log(Person.prototype.isPrototypeOf(Person));// False
+    </script>
+  </body>
+</html>
