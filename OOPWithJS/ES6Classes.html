@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      // Allow us to do modern Constructors but cleaner ;
+      //   1. Class Expression
+      //    const PersonCl = class {
+
+      //    }
+      // 2. class Declaration
+      class PersonCl {
+        constructor(firstName, birthYear) {
+          this.firstName = firstName;
+          this.birthYear = birthYear;
+        }
+        calcAge() {
+          console.log(2037 - this.birthYear);
+        }
+      }
+
+      // Instantiate a person
+      const jessica = new PersonCl("Jessica", 1999);
+      console.log(jessica);
+      console.log(jessica.calcAge());
+
+      console.log(jessica.__proto__ === PersonCl.prototype);
+
+      PersonCl.prototype.greet = function () {
+        console.log(`Hey ${this.firstName}`);
+      };
+      jessica.greet();
+
+      // NOTE - Classes Are not Hoisted - You cant use them before declaration
+      //    - Classes are first-class citizen
+      //   -Classes are executed in strict mode and don't even need to say 'use strict'
+
+      class Fish {
+        constructor(type, weight) {
+          this.type = type;
+          this.weight = weight;
+        }
+        // fucntion to get price of fish
+        calcPrice = function () {
+          const price = this.weight * 100;
+          console.log(`${price}ksh`);
+        };
+      };
+      const tilapia = new Fish("Tilapia", 230);
+      console.log(tilapia);
+      tilapia.calcPrice();
+    </script>
+  </body>
+</html>
