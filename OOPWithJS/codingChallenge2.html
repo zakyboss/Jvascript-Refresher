@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      // 1. Use constructor function to implement a car . A car has a make and a speed property . The speed property is the current speed of the car in km/h ;
+      //   let Car = function (make, speed) {
+      //     this.make = make;
+      //     this.speed = speed;
+      //   };
+      //   // 2. Implement an accelrate method that will increase cars speed by 5 and log new speed to console
+      //   Car.prototype.accelerate = function () {
+      //     this.speed = this.speed + 5;
+      //     console.log(this.speed);
+      //   };
+      //   //3. Implement a brake method that will decrease the car speed by 5 and clg new speed ;
+      //   Car.prototype.brake = function () {
+      //     this.speed = this.speed - 5;
+      //     console.log(this.speed);
+      //   };
+      //   //  4. create 2 car objects and experiment with calling accelaeratung and brake multiple on each of them
+      //   let car1 = new Car("BMW", 120);
+      //   let car2 = new Car("Mercedes", 95);
+      //   console.log(car1.accelerate());
+      //   console.log(car1.accelerate());
+      //   console.log(car1.brake());
+
+      //   console.log("*************************");
+
+      //   console.log(car2.accelerate());
+      //   console.log(car2.brake());
+
+      // codingChallenge2
+      class Car {
+        constructor(make, speed) {
+          this.make = make;
+          this.speed = speed;
+        }
+        accelerate() {
+          this.speed = this.speed += 5;
+          return this.speed;
+        }
+        brake() {
+          this.speed = this.speed -= 5;
+          return this.speed;
+        }
+        get speedUS() {
+          return `${this.speed / 1.6}m/h`;
+        }
+        set speedUS(Currentspeed) {
+          this._speed = this.speed * 1.6;
+          return `${this._speed}km/h`;
+        }
+      }
+      let ford = new Car("ford", 20);
+      console.log(ford.accelerate());
+      console.log(ford.accelerate());
+      console.log(ford.brake());
+      console.log(ford.accelerate());
+      console.log(ford.accelerate());
+      console.log(`*********************`)
+      console.log(ford.speedUS);
+    </script>
+  </body>
+</html>
