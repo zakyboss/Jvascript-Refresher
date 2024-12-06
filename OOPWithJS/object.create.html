@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        'use strict';
+ const PersonProto = {
+    calcAge(){
+        console.log(2037-this.birthYear)
+    }
+ }
+ const steven = Object.create(PersonProto)
+   steven.name = 'Steven';
+   steven.birthYear= 2003;
+   steven.calcAge()
+   
+   </script>
+</body>
+</html>
