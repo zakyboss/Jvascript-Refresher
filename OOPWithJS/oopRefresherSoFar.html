@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      // There  are 3 ways of creating class prototypes
+      // 1.Using constructors
+      // 2.Using ES6 classes
+      // 3. Using Object.create method
+
+      //         //   ************Using Constructors ***********
+      //       const Animal = function (name,type ){
+      //         this.name= name;
+      //         this.type = type;
+      //       }
+
+      // Animal.prototype.makeSound=function(){
+      //     switch(this.name){
+      //         case 'Cat':console.log(`${this.name} meows !`)
+      //         break ;
+      //          case 'Goat':console.log(`${this.name} mee's !`)
+      //          break;
+      //          default : console.log(`Cant Tell Sound`)
+      //             }
+      //        }
+      //        Animal.prototype.eat=function(){
+      //         if (this.type=='herbivorous'){
+      //             console.log('Eats GRASS')
+      //         }else if (this.type=='carnivorous'){
+      // console.log('Eats MEAT')
+      //         }else {
+      //             console.log('Eats both ')
+      //         }
+      //        }
+      //       let goat = new Animal('Goat','herbivorous');
+      //       let cat = new Animal ('Cat', 'carnivorous')
+      //       console.log(goat.eat())
+      //       console.log(cat.makeSound())
+      //       console.log(goat.makeSound())
+
+      // USING ES6 CLASSES
+      //   class Animal {
+      //     constructor(name, type) {
+      //       this.name = name;
+      //       this.type = type;
+      //     }
+      //     makeSound() {
+      //       switch (this.name) {
+      //         case "Cat":
+      //           console.log(`${this.name} meows !`);
+      //           break;
+      //         case "Goat":
+      //           console.log(`${this.name} mee's !`);
+      //           break;
+      //         default:
+      //           console.log(`Cant Tell Sound`);
+      //       }
+      //     }
+
+      //     eat() {
+      //       if (this.type == "herbivorous") {
+      //         console.log("Eats GRASS");
+      //       } else if (this.type == "carnivorous") {
+      //         console.log("Eats MEAT");
+      //       } else {
+      //         console.log("Eats both ");
+      //       }
+      //     }
+      //   }
+
+      //   let goat = new Animal('Goat','herbivorous');
+      //   console.log(goat.eat())
+
+      // Using Object.create();
+      let Animal = {
+  eat: function () {
+    if (this.type === "herbivorous") {
+      console.log(`${this.name} eats GRASS`);
+    } else if (this.type === "carnivorous") {
+      console.log(`${this.name} eats MEAT`);
+    } else {
+      console.log(`${this.name} eats BOTH`);
+    }
+  },
+};
+
+let goat = Object.create(Animal);
+goat.name = "Goat";
+goat.type = "herbivorous";
+goat.eat(); // Goat eats GRASS
+    </script>
+  </body>
+</html>
