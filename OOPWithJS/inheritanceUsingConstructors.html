@@ -31,12 +31,12 @@
       // Instantiate a student
       const mike = new Student("Mike", 2003, "Computer Science");
       console.log(mike);
-
+      Student.prototype.constructor= Student;
       console.log(mike.introduce());
-      console.log(mike.calcAge())
-      
-      let james = new Student ('James', 2004, 'Software Engineering');
-      console.log(james.birthYear )
+      console.log(mike.calcAge());
+
+      let james = new Student("James", 2004, "Software Engineering");
+      console.log(james.birthYear);
     </script>
   </body>
 </html>
