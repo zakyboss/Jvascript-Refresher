@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      let Person = function (firstName, birthYear) {
+        this.firstName = firstName;
+        this.birthYear = birthYear;
+      };
+      //Function to calculate Age ;
+      Person.prototype.calcAge = function () {
+        return `You are ${2037 - this.birthYear} Years old`;
+      };
+
+      // Creating Student Object
+      let Student = function (firstName, birthYear, Course) {
+        Person.call(this, firstName, birthYear);
+        this.Course = Course;
+      };
+      //   linking prototype
+      Student.prototype = Object.create(Person.prototype);
+
+      Student.prototype.introduce = function () {
+        return `Hello My name is ${this.firstName} and I study ${this.Course}`;
+      };
+      // Instantiate a student
+      const mike = new Student("Mike", 2003, "Computer Science");
+      console.log(mike);
+
+      console.log(mike.introduce());
+      console.log(mike.calcAge())
+      
+      let james = new Student ('James', 2004, 'Software Engineering');
+      console.log(james.birthYear )
+    </script>
+  </body>
+</html>
