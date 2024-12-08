@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      let Animal = function (bloodType, diet, birthType) {
+        this.bloodType = bloodType;
+        this.diet = diet;
+        this.birthType = birthType;
+      };
+      Animal.prototype.KnowBloodType = function () {
+        this.bloodType == "cold"
+          ? console.log("cold blooded")
+          : console.log("warm blooded");
+      };
+      let Fish = function (bloodType, diet, birthType, waterType) {
+        Animal.call(this, bloodType, diet, birthType);
+        this.waterType = waterType;
+      };
+      Fish.prototype = Object.create(Animal.prototype);
+      Fish.prototype.constructor = Fish;
+      Fish.prototype.whichWater = function () {
+        return this.waterType == "salty"
+          ? console.log(`Swims in Ocean`)
+          : console.log(`Swims in fresh water`);
+      };
+      let tilapia = new Fish("cold", "herbivorous", "eggs", "salty");
+      console.log(tilapia.KnowBloodType());
+
+
+      
+    </script>
+  </body>
+</html>
