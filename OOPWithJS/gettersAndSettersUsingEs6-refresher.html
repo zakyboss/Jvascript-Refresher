@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      class Employee {
+        constructor(firstName, lastName, salary) {
+          this.firstName = firstName;
+          this.lastName = lastName;
+          this.salary = salary;
+        }
+        get salary() {
+          return this.salary;
+        }
+        set salary(check) {
+          if (check > 0) {
+            this._salary = check;
+          } else {
+            alert("invalid check");
+          }
+        }
+        payTax() {
+          let rate = 1.6 / 100;
+          let netSalary = this._salary-(Math.floor(this._salary*rate))
+          return `Your net Salary is ${netSalary}`
+        }
+      }
+      let mike = new Employee("Mike", "James", 2300);
+      // class Manager{
+
+      // }
+      console.log(mike.payTax());
+    </script>
+  </body>
+</html>
