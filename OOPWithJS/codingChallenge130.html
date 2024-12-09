@@ -7,70 +7,131 @@
   </head>
   <body>
     <script>
-      "use strict";
-      //         Write a function longestPrimeStreak(arr) that takes
-      //          an array of positive integers arr and returns the longest
-      //          consecutive subarray where all the numbers are prime.
-      //           If there are multiple subarrays of the same length,
-      //           return the first one. If no prime numbers exist, return an empty array.
+            "use strict";
+            //         Write a function longestPrimeStreak(arr) that takes
+            //          an array of positive integers arr and returns the longest
+            //          consecutive subarray where all the numbers are prime.
+            //           If there are multiple subarrays of the same length,
+            //           return the first one. If no prime numbers exist, return an empty array.
 
-      // Example 1:
-      // javascript
-      // Copy code
-      // longestPrimeStreak([2, 3, 4, 5, 7, 8, 11, 13]);
-      // Output: [5, 7]
-    //   let longestPrimeStreak = function (arr) {
-    //     let storeIndexOfPrime = [];
+            // Example 1:
+            // javascript
+            // Copy code
+            // longestPrimeStreak([2, 3, 4, 5, 7, 8, 11, 13]);
+            // Output: [5, 7]
+            //   let longestPrimeStreak = function (arr) {
+            //     let storeIndexOfPrime = [];
 
-    //     arr.map((number, index) => {
-    //       if (number % 2 !== 0) {
-    //         return storeIndexOfPrime.push(index);
-    //       } else {
-    //         return storeIndexOfPrime.push("#");
-    //       }
-    //     });
-    //     storeIndexOfPrime = storeIndexOfPrime.join("");
-    //     let storeOutput = storeIndexOfPrime
-    //       .split("#")
-    //       .filter((el) => el !== "")
-    //       .map((el) => Number(el))
-    //       .sort((a, b) => b - a);
-    //     let max = storeOutput[0];
-    //     let answer = arr.slice(max[0], max[max[-1]]);
-    //     return answer;
-    //   };
-    //   let output = longestPrimeStreak([1, 3, 4, 7, 9, 2, 4, 8, 7, 3, 7, 5]);
-    //   console.log(output);
-    let longestPrimeStreak = function (arr) {
-    // Helper Function ;
-    let isPrime= function(num){
-        if(num<=1){
-            return false
+            //     arr.map((number, index) => {
+            //       if (number % 2 !== 0) {
+            //         return storeIndexOfPrime.push(index);
+            //       } else {
+            //         return storeIndexOfPrime.push("#");
+            //       }
+            //     });
+            //     storeIndexOfPrime = storeIndexOfPrime.join("");
+            //     let storeOutput = storeIndexOfPrime
+            //       .split("#")
+            //       .filter((el) => el !== "")
+            //       .map((el) => Number(el))
+            //       .sort((a, b) => b - a);
+            //     let max = storeOutput[0];
+            //     let answer = arr.slice(max[0], max[max[-1]]);
+            //     return answer;
+            //   };
+            //   let output = longestPrimeStreak([1, 3, 4, 7, 9, 2, 4, 8, 7, 3, 7, 5]);
+            //   console.log(output);
+            let longestPrimeStreak = function (arr) {
+              // Helper Function ;
+              let isPrime = function (num) {
+                if (num <= 1) {
+                  return false;
+                }
+                for (let i = 2; i < Math.sqrt(num); i++) {
+                  if (num % i === 0) {
+                    return false;
+                  } else {
+                    return true;
+                  }
+                }
+              };
+              let maxStreak = [];
+              let currentStreak = [];
+              for (let num of arr) {
+                if (isPrime(num)) {
+                  currentStreak.push(num);
+                }
+                if (currentStreak.length > maxStreak.length) {
+                  maxStreak = [...currentStreak];
+                } else {
+                  currentStreak = [];
+                }
+              }
+              return maxStreak;
+            };
+            let output = longestPrimeStreak([1, 3, 4, 7, 9, 2, 4, 8, 7, 3, 7, 5]);
+            console.log(output);
+
+            // let user = {
+            //   otherNames: {
+            //     firstName: "Zakyboss",
+            //     lastName: "Mohamed",
+            //   },
+            //   age: 21,
+            // };
+            // if (user.name ?? user.name.firstName) {
+            //   console.log(user.name.firstName);
+            // } else {
+            //   console.log("wrong Value");
+            // }
+
+
+
+            const userPreferences = {
+        theme: "dark",
+        language: null,
+        notifications: {
+          email: true,
+          sms: undefined,
+        },
+      };
+
+      function getUserPreference(key, defaultValue) {
+        // Your code here
+        if(userPreferences.notifications?.email??false){
+
         }
-        for (let i = 2 ; i<Math.sqrt(num);i++){
-            if(num%i===0){
-                return false
-            } else {
-                return true
-            }
+        if(userPreferences.theme??'light'){
         }
-    }
-    let maxStreak = [];
-    let currentStreak = [];
-    for(let num of arr){
-        if(isPrime(num)){
-            currentStreak.push(num)
+        if(userPreferences.language??'English'){
+
         }
-        if(currentStreak.length > maxStreak.length){
-            maxStreak= [...currentStreak]
-        }else {
-            currentStreak = []
+        if(userPreferences.notifications?? 'sms'){
+
         }
-    }
-    return maxStreak
-    }
-      let output = longestPrimeStreak([1, 3, 4, 7, 9, 2, 4, 8, 7, 3, 7, 5]);
-      console.log(output);
+        if(userPreferences.language??'English'){
+
+        }
+        if(userPreferences.unknownKey??'default'){
+
+        }
+
+      }
+      // Test Cases
+      console.log(getUserPreference("theme", "light"));
+      // Output: "dark" (because "theme" is set to "dark")
+
+      console.log(getUserPreference("language", "English"));
+      // Output: "English" (because "language" is null, so default is used)
+
+      console.log(getUserPreference("notifications.email", false));
+      // Output: true (because "email" notifications are enabled)
+
+      console.log(getUserPreference("notifications.sms", false));
+      // Output: false (because "sms" is undefined, so default is used)
+
+      console.log(getUserPreference("unknownKey", "default"));
+      // Output: "default" (because the key does not exist)
     </script>
   </body>
 </html>
