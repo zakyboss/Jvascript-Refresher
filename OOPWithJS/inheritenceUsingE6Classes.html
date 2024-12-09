@@ -31,6 +31,8 @@
       class Student extends Person {
         constructor(fullName, age, monthlySalaries,course){
             // you dont need to pass the superclass name i.e Person(this , fullName, age, monthlySalaries)
+      //instead
+// Always set up the connection using super() before using the this keyword i.e saying this.course
        super(fullName, age, monthlySalaries,course);
        this.course=course;
         }
