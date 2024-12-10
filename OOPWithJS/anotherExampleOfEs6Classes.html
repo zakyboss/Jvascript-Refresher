@@ -1,31 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=
-    , initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=
+    , initial-scale=1.0"
+    />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-        class Account {
-            constructor(owner,currency , pin){
-                this.owner=owner;
-                this.currency=currency;
-                this.pin =pin;
-           this.movements = [];
-           this.locale= navigator.language ;
-           console.log(`'Thanks For Opening an Account ${owner}`)
-
-        };
-        deposit(val){
-            this.movements.push(val)
+      class Account {
+        constructor(owner, currency, pin) {
+          this.owner = owner;
+          this.currency = currency;
+          this.pin = pin;
+          this.movements = [];
+          this.locale = navigator.language;
+          console.log(`'Thanks For Opening an Account ${owner}`);
         }
-        with
-
+        deposit(val) {
+          this.movements.push(val);
         }
-        const acc1 = new Account ('Jonas','EUR',1111)
+        withdraw(val) {
+          this.deposit(-val);
+        }
+        approveLoan(){
+            return true
+        }
+        requestLoan(val){
+            if(this.approveLoan(val)){
+                this.deposit(val);
+                console.log('loan Approved')
+            }
+        }
+      }
+      const acc1 = new Account("Jonas", "EUR", 1111);
+      acc1.deposit(250);
+      acc1.withdraw(30);
+      console.log(acc1.movements)
+      acc1.requestLoan(1000)
+      console.log(acc1.movements)
+
+
+
+
+
+
 
     </script>
-</body>
+  </body>
 </html>

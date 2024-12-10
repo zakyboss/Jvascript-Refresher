@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      //         Assume "#" is like a backspace in string. This means that string "a#bc#d" actually is "bd"
+
+      // Your task is to process a string with "#" symbols.
+
+      // Examples
+      // "abc#d##c"      ==>  "ac"
+      // "abc##d######"  ==>  ""
+      // "#######"       ==>  ""
+      // ""              ==>  ""
+      function cleanString(s) {
+        //   ... your code ...
+        let copy = s.split("");
+        let storeLetters = copy.filter(el => el !== "#");
+        let storeBackSpaces = copy.filter(el => el === "#");
+        let lastLetter = "#";
+        if (copy[copy.length - 1] !== "#") {
+          lastLetter = storeLetters.pop();
+          for (let i = 0; i < storeBackSpaces.length; i++) {
+            storeLetters.pop();
+          }
+        } else {
+          for (let i = 0; i < storeBackSpaces.length; i++) {
+            storeLetters.pop();
+          }
+        }
+        if (lastLetter !== "#") {
+          storeLetters.push(lastLetter);
+          return storeLetters.join("");
+        }
+        return "";
+      }
+      let output = cleanString("#######");
+      console.log(output);
+    </script>
+  </body>
+</html>
