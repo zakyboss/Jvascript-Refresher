@@ -35,17 +35,20 @@
         }
         deposit(val) {
           this._movements.push(val);
+       return this
         }
         withdraw(val) {
           this.deposit(-val);
+        return this
         }
         _approveLoan() {
           return true;
         }
         requestLoan(val) {
-          if (this.approveLoan(val)) {
+          if (this._approveLoan(val)) {
             this.deposit(val);
             console.log("loan Approved");
+            return this
           }
         }
       }
@@ -56,8 +59,12 @@
       acc1.requestLoan(1000);
       console.log(acc1.getMovements());
    
-
+      acc1.deposit(200).withdraw(24).requestLoan(1800)
    
+      console.log(acc1._movements)
+   
+      // Make the methods to first return (this)
+      // then chain the methods i.e method1().method2()
    </script>
   </body>
 </html>
