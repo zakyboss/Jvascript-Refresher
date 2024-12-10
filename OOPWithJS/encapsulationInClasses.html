@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      
+   // There are 4 Fields
+    //  1. Public fields 
+    //locale=navigator.language
+    //  2.Private fields
+        // #then the value we want to be private #movements
+    //  3.Public methods
+    //  4.Private methods
+   
+      class Account {
+        // How You define public field
+        locale= navigator.language;
+        _movements= [];
+        constructor(owner, currency, pin) {
+          this.owner = owner;
+          this.currency = currency;
+          this._pin = pin;
+          // Protected Property
+          this._movements = [];
+          this.locale = navigator.language;
+          console.log(`'Thanks For Opening an Account ${owner}`);
+        }
+        getMovements() {
+          return this._movements;
+        }
+        deposit(val) {
+          this._movements.push(val);
+        }
+        withdraw(val) {
+          this.deposit(-val);
+        }
+        _approveLoan() {
+          return true;
+        }
+        requestLoan(val) {
+          if (this.approveLoan(val)) {
+            this.deposit(val);
+            console.log("loan Approved");
+          }
+        }
+      }
+      const acc1 = new Account("Jonas", "EUR", 1111);
+      acc1.deposit(250);
+      acc1.withdraw(30);
+      //   console.log(acc1._movements)
+      acc1.requestLoan(1000);
+      console.log(acc1.getMovements());
+   
+
+   
+   </script>
+  </body>
+</html>
