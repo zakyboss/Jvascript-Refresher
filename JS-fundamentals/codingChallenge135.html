@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //         Question: Grouping by Property
+      // You are given an array of objects representing orders from a store:
+
+      // javascript
+      // Copy code
+      const orders = [
+        { orderId: 1, customerName: "John", totalAmount: 200 },
+        { orderId: 2, customerName: "Jane", totalAmount: 150 },
+        { orderId: 3, customerName: "John", totalAmount: 100 },
+        { orderId: 4, customerName: "Jake", totalAmount: 250 },
+        { orderId: 5, customerName: "Jane", totalAmount: 300 },
+      ];
+      // Write a function groupOrdersByCustomer that:
+
+      // Groups the orders by the customerName property.
+      // Returns an object where each key is a customerName and its value is an array of all orders for that customer.
+      let groupOrdersByCustomer = function (orders) {
+        let storeCustomerNames = [];
+        orders.filter(order => {
+          storeCustomerNames.push(order.customerName);
+        });
+        storeCustomerNames = new Set(storeCustomerNames);
+
+        let groupOrder = [...storeCustomerNames];
+        for (let i = 0; i < groupOrder.length; i++) {
+          groupOrder[i] = orders.filter(order => {
+            return order.customerName === groupOrder[i];
+          });
+        }
+        return groupOrder;
+      };
+
+      let output = groupOrdersByCustomer(orders);
+      console.log(output);
+    </script>
+  </body>
+</html>
