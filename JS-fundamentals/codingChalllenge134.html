@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      function dataReverse(data) {
+        // Your code here
+        let storeAnswer = [];
+        let copy = data;
+        copy = copy.reverse();
+        let value;
+        let numberOfTimes = data.length / 8;
+        for (let i = 0; i < numberOfTimes; i++) {
+          value = copy.splice(0, 8);
+          storeAnswer.push(value);
+          console.log(value);
+        }
+        return [storeAnswer.join("")];
+      }
+      let output = dataReverse([
+        1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1,
+        1, 0, 1, 0, 1, 0, 1, 0,
+      ]);
+      console.log(output);
+    </script>
+  </body>
+</html>

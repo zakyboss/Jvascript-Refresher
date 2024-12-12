@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      //       Filters out the people under 21 years old.
+      // Returns a new array containing the names of only the adults (people who are 21 or older).
+      // Sorts the resulting names alphabetically.
+      const people = [
+        { name: "John", age: 28 },
+        { name: "Jane", age: 32 },
+        { name: "Jake", age: 19 },
+        { name: "Jess", age: 25 },
+      ];
+      let getNamesOfAdults = function (people) {
+        let storeAdults = [];
+        for (let adult of people) {
+          if (adult.age >= 21) {
+            storeAdults.push(adult.name);
+          }
+        }
+        let storeOrderedNames = storeAdults.sort();
+        return storeOrderedNames;
+      };
+      let output = getNamesOfAdults(people);
+      console.log(output);
+    </script>
+  </body>
+</html>
