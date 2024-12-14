@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      //         The goal of this exercise is to convert a string to a new string where each character in the new string is "(" if that character appears only once in the original string, or ")" if that character appears more than once in the original string. Ignore capitalization when determining if a character is a duplicate.
+
+      // Examples
+      // "din"      =>  "((("
+      // "recede"   =>  "()()()"
+      // "Success"  =>  ")())())"
+      // "(( @"     =>  "))(("
+      function duplicateEncode(word) {
+        let storeCount = {};
+        let copy = word.slice();
+        copy = copy.toLowerCase();
+        copy = copy.split("");
+        let storeAnswer = [];
+        for (let letter of copy) {
+          if (storeCount[letter]) {
+            storeCount[letter] += 1;
+          } else {
+            storeCount[letter] = 1;
+          }
+        }
+        for (let letter of copy) {
+          if (storeCount[letter] > 1) {
+            storeAnswer.push(")");
+          } else {
+            storeAnswer.push("(");
+          }
+        }
+
+        return storeAnswer.join("");
+      }
+      let output = duplicateEncode("Recede");
+      console.log(output);
+    </script>
+  </body>
+</html>
