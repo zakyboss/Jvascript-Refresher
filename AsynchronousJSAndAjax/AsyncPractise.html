@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const callFriend = function (name) {
+        console.log(`Calling ${name}`);
+      };
+
+      const orderPizza = function (callback) {
+        setTimeout(() => {
+          let pizza = `🍕`;
+          console.log(`${pizza} has been ordered`);
+          callback(pizza); // Pass the pizza to the callback
+        }, 3000);
+      };
+
+      const eatPizza = function (pizza, callback) {
+        setTimeout(() => {
+          console.log(`Eat ${pizza}`);
+          callback(pizza); // Pass the pizza to the callback
+        }, 2000);
+      };
+
+      const goToToilet = function (pizza, callback) {
+        setTimeout(() => {
+          console.log(`Shit out ${pizza}`);
+          callback(pizza); // Optional: Pass the pizza to the callback
+        }, 2000);
+      };
+
+      // Maintain the order of execution
+      callFriend('James');
+      orderPizza(pizza => {
+        eatPizza(pizza, pizza => {
+          goToToilet(pizza, pizza => {
+            console.log(`Done shitting ${pizza}`);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
