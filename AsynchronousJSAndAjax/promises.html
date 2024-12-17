@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      'use strict';
+      // Fishing grilling
+      let catchFish = function () {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            reject();
+          }, 2000);
+        });
+      };
+      let grillFish = function (data) {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            console.log(`Grilled ${data}`);
+            resolve(`Fish  is to ready to eat `);
+          }, 2000);
+        });
+      };
+
+      catchFish()
+        .then(grillFish)
+        .then(message => {
+          console.log(message);
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    </script>
+  </body>
+</html>
