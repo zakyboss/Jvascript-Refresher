@@ -3,84 +3,52 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Country Information</title>
+    <title>Document</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
     <main class="container">
-      <label for="country">Please Choose a Country: </label>
-      <input type="text" class="bg-green-400 p-3" id="country" />
-      <button class="bg-blue-500 text-white p-2 ml-3" id="fetchCountry">
-        Fetch Country Info
-      </button>
-      <div class="countries mt-5"></div>
+      <div class="countries"></div>
+      <button class="btn-country">Where am I?</button>
+      <div class="images"></div>
     </main>
     <script>
-      // Fetch the input value dynamically on button click
-      document
-        .getElementById('fetchCountry')
-        .addEventListener('click', function () {
-          const selectedCountry = document
-            .getElementById('country')
-            .value.trim();
-          if (!selectedCountry) {
-            alert('Please enter a country name!');
-            return;
-          }
-          getCountry(selectedCountry);
-        });
-
-      // Function to fetch and display country data
-      function getCountry(selectedCountry) {
+      let getCountry = function (country) {
+        const btn = document.querySelector('.btn-country');
         const countriesContainer = document.querySelector('.countries');
-        countriesContainer.innerHTML = ''; // Clear previous results
+
         const request = new XMLHttpRequest();
-
-        request.open(
-          'GET',
-          `https://restcountries.com/v2/name/${selectedCountry}`
-        );
+        request.open('GET', `https://restcountries.com/v2/name/${country}`);
         request.send();
-
         request.addEventListener('load', function () {
-          try {
-            const data = JSON.parse(this.responseText)[0]; // Access the first element
-            if (!data) throw new Error('Country not found');
+          const data = JSON.parse(this.responseText)[0]; // Access the first element directly
+          console.log(data);
 
-            // Construct HTML for the country info
-            const html = `<article class="country border p-4 shadow-md">
-              <img class="country__img w-full mb-3" src="${
-                data.flags.svg
-              }" alt="Flag of ${data.name}" />
-              <div class="country__data">
-                <h3 class="country__name text-xl font-bold">${data.name}</h3>
-                <h4 class="country__region text-lg text-gray-600">${
-                  data.region
-                }</h4>
-                <p class="country__row"><span>👫</span>${(
-                  +data.population / 1000000
-                ).toFixed(1)} M</p>
-                <p class="country__row"><span>🗣️</span>${
-                  data.languages[0].name
-                }</p>
-                <p class="country__row"><span>💰</span>${
-                  data.currencies[0].name
-                }</p>
-              </div>
-            </article>`;
+          const html = `<article class="country">
+            <img class="country__img" src="${data.flag}" />
+            <div class="country__data">
+              <h3 class="country__name">${data.name}</h3>
+              <h4 class="country__region">${data.region}</h4>
+              <p class="country__row"><span>👫</span>${(
+                +data.population / 1000000
+              ).toFixed(1)} M</p>
+              <p class="country__row"><span>${
+                data.languages[0].name
+              }</span> LANG</p>
+              <p class="country__row"><span>💰</span>${
+                data.currencies[0].name
+              }</p>
+            </div>
+          </article>`;
 
-            countriesContainer.insertAdjacentHTML('beforeend', html);
-            countriesContainer.style.opacity = 1;
-          } catch (error) {
-            countriesContainer.innerHTML = `<p class="text-red-500">Error: ${error.message}</p>`;
-          }
+          countriesContainer.insertAdjacentHTML('beforeend', html);
+          countriesContainer.style.opacity = 1;
         });
-
-        request.addEventListener('error', function () {
-          countriesContainer.innerHTML = `<p class="text-red-500">Failed to fetch country data. Please try again.</p>`;
-        });
-      }
+      };
+      getCountry('usa');
+      getCountry('Germany');
+      getCountry('switzerland');
+      getCountry('Australia');
     </script>
   </body>
 </html>
