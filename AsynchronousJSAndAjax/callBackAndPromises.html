@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Old way to execute callbacks
+      //   function buyGroceries(callback) {
+      //     setTimeout(() => {
+      //       console.log(`Groceries Have been Bought`);
+      //       callback();
+      //     }, 1000);
+      //   }
+      //   function washUtensils(callback) {
+      //     setTimeout(() => {
+      //       console.log(`Utensils Have been Washed`);
+      //       callback();
+      //     }, 2000);
+      //   }
+      //   function cookFood(callback) {
+      //     setTimeout(() => {
+      //       console.log(`Cooking food`);
+      //       callback();
+      //     }, 1500);
+      //   }
+      //   function EatingFood(callback) {
+      //     setTimeout(() => {
+      //       console.log(`Eating food`);
+      //       callback();
+      //     }, 3000);
+      //   }
+      //   buyGroceries(() => {
+      //     washUtensils(() => {
+      //       cookFood(() => {
+      //         EatingFood(() => {
+      //           console.log('Done Eating food Yay !');
+      //         });
+      //       });
+      //     });
+      //   });
+
+      // Now using promises
+      function buyGroceries() {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve(`Groceries Have been Bought`);
+          }, 1000);
+        });
+      }
+
+      function washUtensils() {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            reject(`Utensils Have been Washed`);
+          }, 2000);
+        });
+      }
+      function cookFood() {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve(`Cooking food`);
+          }, 1500);
+        });
+      }
+      function EatingFood() {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve(`Eating food`);
+          }, 3000);
+        });
+      }
+      buyGroceries()
+        .then(result => {
+          console.log(result);
+          return washUtensils();
+        })
+        .then(result => {
+          console.log(result);
+          return cookFood();
+        })
+        .then(result => {
+          console.log(result);
+          console.log('Done Eating Yay ');
+
+          return EatingFood();
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokémon Finder</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="bg-gray-300 h-[400px] p-4 place-items-center">
+      <div>
+        <input
+          type="text"
+          name="pokimon"
+          id="pokimon"
+          placeholder="Please Enter Pokémon"
+          class="p-2 border border-gray-500 rounded"
+        />
+        <button
+          id="searchButton"
+          class="bg-blue-500 text-white p-2 rounded ml-2"
+        >
+          Search
+        </button>
+      </div>
+      <div
+        class="bg-gray-400 p-4 w-1/4 h-[300px] block place-items-center"
+        id="container"
+      ></div>
+    </div>
+    <script>
+      const container = document.querySelector('#container');
+      const searchButton = document.getElementById('searchButton');
+      const pokimonInput = document.getElementById('pokimon');
+
+      // Function to fetch Pokémon data
+      function fetchPokemon() {
+        const pokimoon = pokimonInput.value.trim().toLowerCase();
+
+        if (!pokimoon) {
+          container.innerHTML = `<p class="text-red-500">Please enter a Pokémon name.</p>`;
+          return;
+        }
+
+        // Show the loading placeholder
+        container.innerHTML = `
+          <img src="./img/loading.png" alt="Loading..." class="p-2" height="200px" />
+          <h3 class="ml-2 font-sans">Loading</h3>
+          <span id="species" class="block p-2">Loading...</span>
+          <span id="hp" class="block p-2">HP: Loading...</span>
+          <span id="weght" class="block p-2">Weight: Loading...</span>
+        `;
+
+        fetch(`https://pokeapi.co/api/v2/pokemon/${pokimoon}`)
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Pokémon not found');
+            }
+            return response.json();
+          })
+          .then(data => {
+            // Update the container with the actual data
+            const html = `
+              <img src="${data.sprites.front_default}" alt="${data.name}" class="p-2" height="200px" />
+              <h3 class="ml-2 font-sans">${data.name}</h3>
+              <span id="species" class="block p-2">Species: ${data.species.name}</span>
+              <span id="hp" class="block p-2">HP: ${data.stats[0].base_stat}</span>
+              <span id="weght" class="block p-2">Weight: ${data.weight}kg</span>
+            `;
+            container.innerHTML = html;
+          })
+          .catch(error => {
+            // Handle any errors and display a message
+            container.innerHTML = `<p class="text-red-500">Error: ${error.message}</p>`;
+          });
+      }
+
+      // Add an event listener to the search button
+      searchButton.addEventListener('click', fetchPokemon);
+
+      // Allow pressing "Enter" to trigger the search
+      pokimonInput.addEventListener('keydown', event => {
+        if (event.key === 'Enter') {
+          fetchPokemon();
+        }
+      });
+    </script>
+  </body>
+</html>
