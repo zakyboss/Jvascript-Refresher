@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let marksGetter = function (marks) {
+        return new Promise(function (resolve, reject) {
+          setTimeout(() => {
+            if (typeof marks === 'number' && marks >= 0 && marks <= 100) {
+              resolve(marks);
+            } else {
+              reject('Invalid marks. Please enter a number between 0 and 100.');
+            }
+          }, 1000);
+        });
+      };
+
+      let checkMarks = function (marks) {
+        return new Promise(function (resolve, reject) {
+          setTimeout(() => {
+            if (marks > 80) {
+              resolve('A student');
+            } else if (marks > 70 && marks < 80) {
+              resolve('B student');
+            } else if (marks > 40 && marks < 70) {
+              resolve('C student');
+            } else if (marks < 40) {
+              resolve('e student');
+            }
+          }, 1000);
+        });
+      };
+
+      let awardMarks = function (marks) {
+        return new Promise(function (resolve, reject) {
+          setTimeout(() => {
+            resolve(`You graduated as a ${marks}`);
+          }, 1000);
+        });
+      };
+
+      marksGetter(130)
+        .then(results => checkMarks(results))
+        .then(results => awardMarks(results))
+        .then(message => {
+          console.log(message);
+        })
+        .catch(function (error) {
+          console.log('Error:', error); // now it correctly logs the error message
+        });
+    </script>
+  </body>
+</html>
