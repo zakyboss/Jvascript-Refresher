@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function packClothes() {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve('Clothes Have been Packed 👚');
+          }, 1000);
+        });
+      }
+      function packShoes() {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve('Shoes Have been Packed 👟');
+          }, 2000);
+        });
+      }
+      function packSnacks() {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve('Snacks Have been Packed 🍩');
+          }, 2000);
+        });
+      }
+
+      // Without async
+      // BE Gone !!!
+      //   packClothes()
+      //     .then(result => {
+      //       console.log(result);
+      //       return packShoes();
+      //     })
+      //     .then(result => {
+      //       console.log(result);
+      //       return packSnacks();
+      //     })
+      //     .catch(error => {
+      //       console.error(error);
+      //     });
+
+      //   Hello Async Baby!!
+      async function packForTrip() {
+        try {
+          let packClothesOutput = await packClothes();
+          console.log(packClothesOutput);
+          let packShoesOutput = await packShoes();
+          console.log(packShoesOutput);
+          let packSnacksOutput = await packSnacks();
+          console.log(packSnacksOutput);
+          console.log('Enjoy Your Trip');
+        } catch {
+          console.error('Error 404 ');
+        }
+      }
+      packForTrip();
+    </script>
+  </body>
+</html>
