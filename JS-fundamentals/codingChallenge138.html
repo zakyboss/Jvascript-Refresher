@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //         'use strict';
+      //         Write Number in Expanded Form
+      // You will be given a number and you will need to return it as a string in Expanded Form. For example:
+
+      //    12 --> "10 + 2"
+      //    45 --> "40 + 5"
+      // 70304 --> "70000 + 300 + 4"
+      // NOTE: All numbers will be whole numbers greater than 0.
+      function expandedForm(num) {
+        let copy = num;
+        let storeAnswer = [];
+        copy = String(copy);
+        let storeLength = copy.length - 1;
+        for (let i = 0; i < copy.length; i++) {
+          if (copy[i] != "0") {
+            let zero = "0";
+            let storeZeros = storeLength - i;
+            storeAnswer.push(`${copy[i]}${zero.repeat(storeZeros)}`);
+          }
+        }
+        return storeAnswer.join(" + ");
+      }
+      let output = expandedForm(12);
+      console.log(output);
+    </script>
+  </body>
+</html>
