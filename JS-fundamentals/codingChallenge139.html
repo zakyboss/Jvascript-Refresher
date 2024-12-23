@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      //         An Arithmetic Progression is defined as one in which there is a
+      //         constant difference between the consecutive terms of a given series of
+      //         numbers. You are provided with consecutive elements of an Arithmetic
+      //         Progression. There is however one hitch: exactly one term from the
+      //         original series is missing from the set of numbers which have been
+      //         given to you. The rest of the given series is the same as the original AP. Find the missing term.
+
+      // You have to write a function that receives a list, list size will always be at
+      // least 3 numbers. The missing term will never be the first or last one.
+
+      var findMissing = function (list) {
+        let storeAnswer = [];
+        let answer = [];
+        for (let i = 0; i < list.length; i++) {
+          let j = i + 1;
+          while (j < list.length) {
+            storeAnswer.push(list[j] - list[i]);
+            j++;
+            break;
+          }
+        }
+        let max = Math.max(...storeAnswer);
+        let indexOfDifference = storeAnswer.indexOf(max);
+        let valueOnLeft = list[indexOfDifference - 1];
+        let valueOnRight = list[indexOfDifference - 1];
+        for (let i = valueOnLeft; i <= max; i++) {
+          answer.push(i);
+        }
+        return answer;
+      };
+      let output = findMissing([1, 2, 4, 5]);
+      console.log(output);
+    </script>
+  </body>
+</html>
