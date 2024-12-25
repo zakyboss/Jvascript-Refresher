@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      //         Complete the function/method so that it returns the url with anything after the anchor (#) removed.
+
+      // Examples
+      // "www.codewars.com#about" --> "www.codewars.com"
+      // "www.codewars.com?page=1" -->"www.codewars.com?page=1"
+      function removeUrlAnchor(url) {
+        // TODO: complete
+        let storeAnswer;
+        let copy = url.split("");
+        if (!copy.includes("#")) {
+          storeAnswer = copy.join("");
+          return storeAnswer;
+        } else {
+          let indexOfHash = copy.indexOf("#");
+          let storeAnswer = copy.slice(0, indexOfHash);
+          return storeAnswer.join("");
+        }
+      }
+    </script>
+  </body>
+</html>
