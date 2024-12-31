@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //       Given a list of integers and a single sum value, return the first two values
+      //        (parse from the left please) in order of appearance that add up to form the sum.
+
+      // If there are two or more pairs with the required sum, the pair whose second
+      // element has the smallest index is the solution.
+      function sumPairs(ints, s) {
+        //   return [0, 0] || undefined ;
+        // filter the ints higher than s
+        if (s >= 0) {
+          let storePossibleAns = ints.filter(num => num <= s);
+          let storeTheAnsValues = [];
+          for (let i = 0; i < storePossibleAns.length; i++) {
+            for (let j = i + 1; j < storePossibleAns.length; j++) {
+              if (storePossibleAns[i] + storePossibleAns[j] == s) {
+                storeTheAnsValues.push(
+                  storePossibleAns[i],
+                  storePossibleAns[j]
+                );
+              }
+            }
+          }
+          let [firstValue, secondValue] = storeTheAnsValues;
+          return firstValue !== undefined || secondValue !== undefined
+            ? [firstValue, secondValue]
+            : undefined;
+        } else {
+          let storeTheAnsValues = [];
+          for (let i = 0; i < ints.length; i++) {
+            for (let j = i + 1; j < ints.length; j++) {
+              if (ints[i] + ints[j] == s) {
+                storeTheAnsValues.push(ints[i], ints[j]);
+              }
+            }
+          }
+          let [firstValue, secondValue] = storeTheAnsValues;
+          return firstValue !== undefined || secondValue !== undefined
+            ? [firstValue, secondValue]
+            : undefined;
+        }
+      }
+      let output = sumPairs([20, -13, 40], -7);
+      console.log(output);
+    </script>
+  </body>
+</html>

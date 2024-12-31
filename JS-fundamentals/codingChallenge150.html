@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      function solve(s) {
+        let copy = s.slice();
+        let alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
+        let vowels = "aeiou";
+        let storeConsonants = [];
+        let storeSumConsonantIndex = [];
+        for (let i = 0; i < s.length; i++) {
+          if (vowels.includes(s[i])) {
+            storeConsonants.push("-");
+          } else {
+            storeConsonants.push(s[i]);
+          }
+        }
+        storeConsonants = storeConsonants.join("").split("-");
+        for (let i = 0; i < storeConsonants.length; i++) {
+          if (storeConsonants[i].length < 1) {
+            storeSumConsonantIndex.push(
+              alphabet.indexOf(storeConsonants[i]) + 1
+            );
+          } else {
+            let count = 0;
+            for (let letter of storeConsonants[i]) {
+              let index = alphabet.indexOf(letter) + 1;
+              count += index;
+            }
+            storeSumConsonantIndex.push(count);
+          }
+        }
+        let max = Math.max(...storeSumConsonantIndex);
+        return max;
+      }
+      let output = solve("zodiac");
+      console.log(output);
+    </script>
+  </body>
+</html>
