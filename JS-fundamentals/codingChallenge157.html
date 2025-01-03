@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Human Readable Time</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+
+      // Function to convert seconds into HH:MM:SS format
+      function humanReadable(seconds) {
+        // Calculate hours, minutes, and seconds
+        const hours = Math.floor(seconds / 3600);
+        const minutes = Math.floor((seconds % 3600) / 60);
+        const remainingSeconds = seconds % 60;
+
+        // Format each value to 2 digits
+        const formattedHours = String(hours).padStart(2, "0");
+        const formattedMinutes = String(minutes).padStart(2, "0");
+        const formattedSeconds = String(remainingSeconds).padStart(2, "0");
+
+        // Return the formatted string
+        return `${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
+      }
+
+      // Test the function
+      let output = humanReadable(90); // 90 seconds = 00:01:30
+      console.log(output); // Output: 00:01:30
+
+      output = humanReadable(359999); // Maximum value
+      console.log(output); // Output: 99:59:59
+    </script>
+  </body>
+</html>
