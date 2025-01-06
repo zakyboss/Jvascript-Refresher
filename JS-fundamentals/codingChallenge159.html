@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      //         Move the first letter of each word to the end of it, then add "ay"
+      //         to the end of the word. Leave punctuation marks untouched.
+
+      // Examples
+      // pigIt('Pig latin is cool'); // igPay atinlay siay oolcay
+      // pigIt('Hello world !');     // elloHay orldway !
+      function pigIt(str) {
+        //Code here
+        let copy = str.slice().split(" ");
+        let answer = [];
+        for (let word of copy) {
+          if (word.length > 1) {
+            let firstLetter = word.slice(0, 1);
+            let restOfLetter = word.slice(1);
+            answer.push(restOfLetter + firstLetter + "ay");
+          } else if (word.length < 2 && /[a-zA-Z]/.test(word)) {
+            answer.push(word + "ay");
+          } else {
+            answer.push(word);
+          }
+        }
+        return answer.join(" ");
+      }
+      let output = pigIt("Hello world !");
+      console.log(output);
+    </script>
+  </body>
+</html>
