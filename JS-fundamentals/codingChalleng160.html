@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //      Complete the function/method so that it takes a PascalCase
+      //      string and returns the string in snake_case notation. Lowercase
+      //       characters can be numbers. If the method gets a number as input, it should return a string.
+
+      // Examples
+      // "TestController"  -->  "test_controller"
+      // "MoviesAndBooks"  -->  "movies_and_books"
+      // "App7Test"        -->  "app7_test"
+      // 1                 -->  "1"
+      function toUnderscore(string) {
+        // TODO: complete
+        if (typeof string === "string") {
+          let copy = string.slice().split("");
+          let upperCase = string.slice().toUpperCase().split("");
+          let lowerCase = string.slice().toLowerCase().split("");
+          let answer = [];
+          for (let i = 0; i < copy.length; i++) {
+            if (
+              i !== 0 &&
+              upperCase.includes(copy[i]) &&
+              isNaN(Number(copy[i]))
+            ) {
+              answer.push("_" + lowerCase[i]);
+            } else {
+              answer.push(lowerCase[i]);
+            }
+          }
+          return answer.join("");
+        } else {
+          return String(string);
+        }
+      }
+      let output = toUnderscore(1);
+      console.log(output);
+    </script>
+  </body>
+</html>

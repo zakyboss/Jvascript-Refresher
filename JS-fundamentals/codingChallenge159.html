@@ -14,24 +14,33 @@
       // Examples
       // pigIt('Pig latin is cool'); // igPay atinlay siay oolcay
       // pigIt('Hello world !');     // elloHay orldway !
-      function pigIt(str) {
-        //Code here
-        let copy = str.slice().split(" ");
-        let answer = [];
-        for (let word of copy) {
-          if (word.length > 1) {
-            let firstLetter = word.slice(0, 1);
-            let restOfLetter = word.slice(1);
-            answer.push(restOfLetter + firstLetter + "ay");
-          } else if (word.length < 2 && /[a-zA-Z]/.test(word)) {
-            answer.push(word + "ay");
-          } else {
-            answer.push(word);
-          }
-        }
-        return answer.join(" ");
+      // function pigIt(str) {
+      //Code here
+      //   let copy = str.slice().split(" ");
+      //   let answer = [];
+      //   for (let word of copy) {
+      //     if (word.length > 1) {
+      //       let firstLetter = word.slice(0, 1);
+      //       let restOfLetter = word.slice(1);
+      //       answer.push(restOfLetter + firstLetter + "ay");
+      //     } else if (word.length < 2 && /[a-zA-Z]/.test(word)) {
+      //       answer.push(word + "ay");
+      //     } else {
+      //       answer.push(word);
+      //     }
+      //   }
+      //   return answer.join(" ");
+      // }
+      function transformToObjects(numberArray) {
+        // Todo: Add your logic
+        // should return an array of objects
+        let result = numberArray.map((value, index) => {
+          return { val:value };
+        });
+        return result;
       }
-      let output = pigIt("Hello world !");
+
+      let output = transformToObjects([1, 2, 3]);
       console.log(output);
     </script>
   </body>
